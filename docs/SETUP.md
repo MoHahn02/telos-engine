@@ -80,7 +80,9 @@ For LAN/phone access, bind to your private LAN IP only. Do not expose the dashbo
 
 ## 5. Scheduled Tasks
 
-Windows scheduled tasks are optional:
+Windows scheduled tasks are optional. They are never registered automatically by
+`python telos.py init`, `python telos.py seed`, the dashboard or normal imports.
+They are created only if you explicitly run the registration scripts:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts/register_telos_radar_split_tasks.ps1

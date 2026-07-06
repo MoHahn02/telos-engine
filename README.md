@@ -32,6 +32,7 @@ reports, database, forecasts or personal daily briefings.
 - Optional: Ollama for local model analysis
 
 The core memory store uses only the Python standard library. Tests use `pytest`.
+Windows scheduled tasks are opt-in and are never registered automatically.
 
 ## Quick Start
 
