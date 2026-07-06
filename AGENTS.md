@@ -72,3 +72,18 @@ git check-ignore -v telos/radar/example.md
 ```
 
 If any generated personal output appears as unignored, fix `.gitignore` before committing.
+
+## Configuration Work
+
+When the user asks to add scanned topics or sources, edit the relevant config
+and follow [docs/CONFIGURATION.md](docs/CONFIGURATION.md). Validate JSON before
+running the pipeline.
+
+When the user asks to replace the market universe, edit
+`telos_market_watchlist.json` and follow [docs/WATCHLIST.md](docs/WATCHLIST.md).
+The default implementation expects exactly 100 stocks.
+
+When the user expects Telos to be operated through chat, follow
+[docs/OPERATING_WITH_AN_AGENT.md](docs/OPERATING_WITH_AN_AGENT.md): the agent
+should retrieve context, run commands, inspect outputs and explain changes
+without committing private generated state.

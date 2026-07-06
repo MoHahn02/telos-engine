@@ -129,6 +129,28 @@ set the relevant `enabled` fields to `false`.
 The default configs contain no private claim IDs. After creating your own claims,
 you can link topic entries or watchlist themes to claim IDs manually.
 
+Detailed guides:
+
+- [docs/CONFIGURATION.md](docs/CONFIGURATION.md): add scan topics, sources and scoring rules
+- [docs/WATCHLIST.md](docs/WATCHLIST.md): replace the Telos 100 watchlist and benchmarks
+- [docs/OPERATING_WITH_AN_AGENT.md](docs/OPERATING_WITH_AN_AGENT.md): use Telos through a coding agent instead of manual CLI operation
+
+## Operating With an AI Agent
+
+Telos is meant to be operated from a normal chat with an AI coding agent. You can
+say things like:
+
+```text
+Add biotech automation as a new radar topic.
+Replace the Telos 100 with a robotics and energy watchlist.
+Run today's Telos loop and show me the failures.
+Check this claim against today's evidence.
+```
+
+The agent should retrieve local context, edit configs, run the pipeline, inspect
+quality gates and explain what changed. Users still decide which theories,
+claims and evidence promotions are actually accepted.
+
 ## Privacy Model
 
 This project is local-first. Your database, reports, memories and generated
@@ -142,6 +164,9 @@ Read [docs/PRIVACY.md](docs/PRIVACY.md) before making a public repository.
 See:
 
 - [docs/SETUP.md](docs/SETUP.md)
+- [docs/CONFIGURATION.md](docs/CONFIGURATION.md)
+- [docs/WATCHLIST.md](docs/WATCHLIST.md)
+- [docs/OPERATING_WITH_AN_AGENT.md](docs/OPERATING_WITH_AN_AGENT.md)
 - [docs/PRIVACY.md](docs/PRIVACY.md)
 - [docs/PUBLISHING.md](docs/PUBLISHING.md)
 - [docs/architecture.html](docs/architecture.html)

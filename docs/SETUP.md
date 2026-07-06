@@ -88,3 +88,19 @@ powershell -ExecutionPolicy Bypass -File scripts/register_telos_worldview_task.p
 ```
 
 Review scripts before registering tasks on your machine.
+
+## 6. Use With an AI Agent
+
+You do not have to operate Telos manually. The intended workflow is often:
+
+```text
+User describes the change -> AI agent edits configs or runs scripts -> agent checks outputs -> user reviews the result
+```
+
+Start with [OPERATING_WITH_AN_AGENT.md](OPERATING_WITH_AN_AGENT.md) if you want
+Telos to be maintained through Codex or another coding assistant.
+
+For customization:
+
+- [CONFIGURATION.md](CONFIGURATION.md): add topics, sources and scoring rules.
+- [WATCHLIST.md](WATCHLIST.md): replace the Telos 100 stock universe.
