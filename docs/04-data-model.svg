@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="820" viewBox="0 0 1300 820" role="img" aria-label="Telos Data Model">
+<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#101828" flood-opacity=".14"/></filter>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 10 5 L 0 10 z" fill="#748094"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#f6f7f9"/>
+<text x="40.0" y="46.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="760" text-anchor="start">Telos Data Model</text>
+<text x="40.0" y="74.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="start">The local database and report files keep claims, beliefs, evidence, forecasts and reviews auditable</text>
+<rect x="80.0" y="140.0" width="210.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="80.0" y="140.0" width="5" height="92.0" rx="2.5" fill="#2563eb"/>
+<text x="96.0" y="165.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">MEMORY</text>
+<text x="96.0" y="188.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">notes, context, theories</text>
+<rect x="365.0" y="140.0" width="210.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="365.0" y="140.0" width="5" height="92.0" rx="2.5" fill="#6d4aff"/>
+<text x="381.0" y="165.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">CLAIM</text>
+<text x="381.0" y="188.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">testable statement</text>
+<rect x="650.0" y="140.0" width="210.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="650.0" y="140.0" width="5" height="92.0" rx="2.5" fill="#6d4aff"/>
+<text x="666.0" y="165.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">BELIEF</text>
+<text x="666.0" y="188.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">stable assumption</text>
+<rect x="935.0" y="140.0" width="210.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="935.0" y="140.0" width="5" height="92.0" rx="2.5" fill="#0f8a5f"/>
+<text x="951.0" y="165.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">EVIDENCE</text>
+<text x="951.0" y="188.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">polarity, source,</text>
+<text x="951.0" y="205.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">reliability</text>
+<rect x="80.0" y="420.0" width="210.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="80.0" y="420.0" width="5" height="92.0" rx="2.5" fill="#2563eb"/>
+<text x="96.0" y="445.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">RADAR RUN</text>
+<text x="96.0" y="468.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">fetch and scan metadata</text>
+<rect x="365.0" y="420.0" width="210.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="365.0" y="420.0" width="5" height="92.0" rx="2.5" fill="#2563eb"/>
+<text x="381.0" y="445.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">RADAR ITEM</text>
+<text x="381.0" y="468.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">signal, URL, score</text>
+<rect x="650.0" y="420.0" width="210.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="650.0" y="420.0" width="5" height="92.0" rx="2.5" fill="#0f8a5f"/>
+<text x="666.0" y="445.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">DOSSIER</text>
+<text x="666.0" y="468.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">grounded article analysis</text>
+<rect x="935.0" y="420.0" width="210.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="935.0" y="420.0" width="5" height="92.0" rx="2.5" fill="#a15c00"/>
+<text x="951.0" y="445.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">REVIEW</text>
+<text x="951.0" y="468.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">audit and approval notes</text>
+<rect x="365.0" y="630.0" width="210.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="365.0" y="630.0" width="5" height="92.0" rx="2.5" fill="#c2413b"/>
+<text x="381.0" y="655.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">DREAM RUN</text>
+<text x="381.0" y="678.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">bounded reflection</text>
+<rect x="650.0" y="630.0" width="210.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="650.0" y="630.0" width="5" height="92.0" rx="2.5" fill="#c2413b"/>
+<text x="666.0" y="655.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">FORECAST</text>
+<text x="666.0" y="678.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">probability and outcome</text>
+<line x1="290.0" y1="186.0" x2="365.0" y2="186.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="575.0" y1="186.0" x2="650.0" y2="186.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="860.0" y1="186.0" x2="935.0" y2="186.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 935 207 C 840 280 565 280 470 232" fill="none" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="290.0" y1="466.0" x2="365.0" y2="466.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="575.0" y1="466.0" x2="650.0" y2="466.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="860.0" y1="466.0" x2="935.0" y2="466.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 755 512 C 755 570 755 570 755 630" fill="none" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="575.0" y1="676.0" x2="650.0" y2="676.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1040 512 C 1040 670 860 700 860 676" fill="none" stroke="#748094" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M 470 630 C 430 560 430 315 470 232" fill="none" stroke="#748094" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="80.0" y="755.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="500" text-anchor="start">SQLite stores structured state. Markdown stores human-readable reports, dossiers, queues and ledgers.</text>
+</svg>

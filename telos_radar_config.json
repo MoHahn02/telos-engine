@@ -1,0 +1,517 @@
+﻿{
+    "version":  1,
+    "lookback_hours":  36,
+    "min_score":  6,
+    "max_items_per_source":  250,
+    "max_digest_items":  80,
+    "max_report_items":  25,
+    "min_grounded_report_items":  2,
+    "max_report_candidates":  150,
+    "storage_min_score":  2,
+    "max_article_chars":  30000,
+    "llm_prefilter":  {
+                          "enabled":  true,
+                          "model":  "qwen3.5:9b",
+                          "thinking":  false,
+                          "max_items":  600,
+                          "batch_size":  16,
+                          "min_rule_score":  2,
+                          "min_model_score":  55,
+                          "include_first_paragraph":  true,
+                          "first_paragraph_max_items":  250,
+                          "snippet_chars":  700,
+                          "timeout_seconds":  900,
+                          "temperature":  0.0,
+                          "num_ctx":  8192,
+                          "num_predict":  2600
+                      },
+    "llm_report":  {
+                       "enabled":  true,
+                       "model":  "qwen3.5:9b",
+                       "max_items":  25,
+                       "analysis_thinking":  true,
+                       "triage_enabled":  true,
+                       "triage_max_candidates":  150,
+                       "triage_thinking":  false,
+                       "min_relevance":  60,
+                       "timeout_seconds":  600,
+                       "max_input_chars":  6500,
+                       "temperature":  0.2,
+                       "num_ctx":  8192,
+                       "num_predict":  900
+                   },
+    "daily_synthesis":  {
+                            "enabled":  true,
+                            "model":  "qwen3.5:9b",
+                            "thinking":  false,
+                            "max_dossiers":  25,
+                            "max_input_chars":  90000,
+                            "timeout_seconds":  1800,
+                            "temperature":  0.2,
+                            "num_ctx":  32768,
+                            "num_predict":  4200
+                        },
+    "negative_keywords":  [
+                              "voucher",
+                              "vouchers",
+                              "sponsor",
+                              "sponsors",
+                              "coupon",
+                              "giveaway",
+                              "hackathon"
+                          ],
+    "topics":  [
+                   {
+                       "id":  "ai_frontier",
+                       "label":  "Frontier AI",
+                       "weight":  5,
+                       "keywords":  [
+                                        "frontier model",
+                                        "gpt",
+                                        "openai",
+                                        "anthropic",
+                                        "claude",
+                                        "gemini",
+                                        "llm",
+                                        "reasoning model",
+                                        "benchmark",
+                                        "eval",
+                                        "task horizon",
+                                        "long-horizon"
+                                    ],
+                       "claim_ids":  [
+
+                                     ]
+                   },
+                   {
+                       "id":  "agents_memory",
+                       "label":  "Agents / Memory",
+                       "weight":  5,
+                       "keywords":  [
+                                        "agent",
+                                        "agents",
+                                        "computer use",
+                                        "browser use",
+                                        "tool use",
+                                        "memory",
+                                        "orchestration",
+                                        "workflow",
+                                        "developer workflow",
+                                        "copilot",
+                                        "code agent",
+                                        "coding agent",
+                                        "custom agent",
+                                        "ide agent",
+                                        "software engineering agent",
+                                        "permissions",
+                                        "sandbox",
+                                        "identity"
+                                    ],
+                       "claim_ids":  [
+
+                                     ]
+                   },
+                   {
+                       "id":  "rsi_ai_science",
+                       "label":  "RSI / AI for Science",
+                       "weight":  5,
+                       "keywords":  [
+                                        "recursive self-improvement",
+                                        "self-improvement",
+                                        "ai scientist",
+                                        "ai for science",
+                                        "automated lab",
+                                        "robotic lab",
+                                        "hypothesis generation",
+                                        "experiment planning",
+                                        "research agent",
+                                        "ai r\u0026d",
+                                        "ml research"
+                                    ],
+                       "claim_ids":  [
+
+                                     ]
+                   },
+                   {
+                       "id":  "robotics_world_models",
+                       "label":  "Robotics / Physical AI",
+                       "weight":  5,
+                       "keywords":  [
+                                        "robot",
+                                        "robotics",
+                                        "humanoid",
+                                        "embodied ai",
+                                        "physical ai",
+                                        "world model",
+                                        "simulation",
+                                        "factory automation",
+                                        "warehouse robot",
+                                        "defense robotics",
+                                        "drone"
+                                    ],
+                       "claim_ids":  [
+
+                                     ]
+                   },
+                   {
+                       "id":  "compute_energy",
+                       "label":  "Compute / Energy / Chips",
+                       "weight":  5,
+                       "keywords":  [
+                                        "gpu",
+                                        "accelerator",
+                                        "compute",
+                                        "datacenter",
+                                        "data center",
+                                        "hpc",
+                                        "inference",
+                                        "training cluster",
+                                        "ai infrastructure",
+                                        "ai factory",
+                                        "liquid cooling",
+                                        "substation",
+                                        "transformer",
+                                        "grid",
+                                        "nuclear",
+                                        "gigawatt",
+                                        "power",
+                                        "energy",
+                                        "cooling",
+                                        "semiconductor",
+                                        "nvidia",
+                                        "tsmc",
+                                        "asic"
+                                    ],
+                       "claim_ids":  [
+
+                                     ]
+                   },
+                   {
+                       "id":  "data_advantage",
+                       "label":  "Useful Data Advantage",
+                       "weight":  4,
+                       "keywords":  [
+                                        "synthetic data",
+                                        "workflow data",
+                                        "developer data",
+                                        "first-person data",
+                                        "wearables",
+                                        "glasses",
+                                        "android",
+                                        "mobile assistant",
+                                        "personal assistant",
+                                        "data flywheel"
+                                    ],
+                       "claim_ids":  [
+
+                                     ]
+                   },
+                   {
+                       "id":  "crypto_agents",
+                       "label":  "Crypto / Agent Infra",
+                       "weight":  3,
+                       "keywords":  [
+                                        "stablecoin",
+                                        "payment rail",
+                                        "micropayment",
+                                        "agent payment",
+                                        "decentralized compute",
+                                        "render network",
+                                        "nosana",
+                                        "bitcoin mining",
+                                        "proof of work",
+                                        "gpu marketplace"
+                                    ],
+                       "claim_ids":  [
+
+                                     ]
+                   },
+                   {
+                       "id":  "ai_security",
+                       "label":  "AI Security / Agent Safety",
+                       "weight":  4,
+                       "keywords":  [
+                                        "prompt injection",
+                                        "jailbreak",
+                                        "agent security",
+                                        "ai security",
+                                        "model security",
+                                        "data poisoning",
+                                        "poisoning",
+                                        "red team",
+                                        "guardrail",
+                                        "sandbox escape",
+                                        "exfiltration",
+                                        "supply chain",
+                                        "model vulnerability",
+                                        "secure inference"
+                                    ],
+                       "claim_ids":  [
+
+                                     ]
+                   },
+                   {
+                       "id":  "consciousness_info",
+                       "label":  "Consciousness / Information",
+                       "weight":  2,
+                       "keywords":  [
+                                        "consciousness",
+                                        "sentience",
+                                        "information theory",
+                                        "subjective time",
+                                        "ai consciousness",
+                                        "moral patient",
+                                        "agency"
+                                    ],
+                       "claim_ids":  [
+
+                                     ]
+                   }
+               ],
+    "sources":  [
+                    {
+                        "id":  "arxiv_ai",
+                        "name":  "arXiv AI/ML/CL/Robotics",
+                        "type":  "atom",
+                        "priority":  4,
+                        "url":  "https://export.arxiv.org/api/query?search_query=cat:cs.AI+OR+cat:cs.LG+OR+cat:cs.CL+OR+cat:cs.RO\u0026sortBy=submittedDate\u0026sortOrder=descending\u0026max_results=250"
+                    },
+                    {
+                        "id":  "arxiv_systems",
+                        "name":  "arXiv Systems / Distributed Compute",
+                        "type":  "atom",
+                        "priority":  3,
+                        "url":  "https://export.arxiv.org/api/query?search_query=cat:cs.DC+OR+cat:cs.NI+OR+cat:cs.SE\u0026sortBy=submittedDate\u0026sortOrder=descending\u0026max_results=150"
+                    },
+                    {
+                        "id":  "openai_news",
+                        "name":  "OpenAI News",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://openai.com/news/rss.xml"
+                    },
+                    {
+                        "id":  "anthropic_news",
+                        "name":  "Anthropic News",
+                        "type":  "html_listing",
+                        "priority":  5,
+                        "url":  "https://www.anthropic.com/news",
+                        "link_include":  "/news/",
+                        "link_exclude":  "#|/news$",
+                        "max_links":  30
+                    },
+                    {
+                        "id":  "google_deepmind",
+                        "name":  "Google DeepMind Blog",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://deepmind.google/blog/rss.xml"
+                    },
+                    {
+                        "id":  "google_research",
+                        "name":  "Google Research Blog",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://research.google/blog/rss/"
+                    },
+                    {
+                        "id":  "microsoft_research",
+                        "name":  "Microsoft Research Blog",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://www.microsoft.com/en-us/research/feed/"
+                    },
+                    {
+                        "id":  "aws_ml",
+                        "name":  "AWS Machine Learning Blog",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://aws.amazon.com/blogs/machine-learning/feed/"
+                    },
+                    {
+                        "id":  "together_ai",
+                        "name":  "Together AI Blog",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://www.together.ai/blog/rss.xml"
+                    },
+                    {
+                        "id":  "github_ai",
+                        "name":  "GitHub Blog AI \u0026 ML",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://github.blog/ai-and-ml/feed/"
+                    },
+                    {
+                        "id":  "github_copilot_changelog",
+                        "name":  "GitHub Copilot Changelog",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://github.blog/changelog/label/copilot/feed/"
+                    },
+                    {
+                        "id":  "sourcegraph_blog",
+                        "name":  "Sourcegraph Blog",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://sourcegraph.com/blog/rss.xml"
+                    },
+                    {
+                        "id":  "huggingface_blog",
+                        "name":  "Hugging Face Blog",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://huggingface.co/blog/feed.xml"
+                    },
+                    {
+                        "id":  "metr_blog",
+                        "name":  "METR Blog",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://metr.org/blog/rss.xml"
+                    },
+                    {
+                        "id":  "techcrunch_ai",
+                        "name":  "TechCrunch AI",
+                        "type":  "rss",
+                        "priority":  2,
+                        "url":  "https://techcrunch.com/category/artificial-intelligence/feed/"
+                    },
+                    {
+                        "id":  "venturebeat_ai",
+                        "name":  "VentureBeat AI",
+                        "type":  "rss",
+                        "priority":  2,
+                        "url":  "https://venturebeat.com/category/ai/feed/"
+                    },
+                    {
+                        "id":  "the_decoder",
+                        "name":  "The Decoder",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://the-decoder.com/feed/"
+                    },
+                    {
+                        "id":  "the_gradient",
+                        "name":  "The Gradient",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://thegradient.pub/rss/"
+                    },
+                    {
+                        "id":  "latent_space",
+                        "name":  "Latent Space",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://www.latent.space/feed"
+                    },
+                    {
+                        "id":  "import_ai",
+                        "name":  "Import AI",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://importai.substack.com/feed"
+                    },
+                    {
+                        "id":  "epoch_ai",
+                        "name":  "Epoch AI",
+                        "type":  "html_listing",
+                        "priority":  4,
+                        "url":  "https://epoch.ai/latest",
+                        "link_include":  "^https://epoch.ai/",
+                        "link_exclude":  "substack|x\\.com|bsky\\.app|github\\.com|linkedin\\.com|/topics|/publications|/gradient-updates|/data($|/)|/benchmarks|/frontiermath|/eci|/trends|/careers|/donate|/consultations|/about|/team|/privacy|/cookie|/search",
+                        "max_links":  120
+                    },
+                    {
+                        "id":  "nvidia_ai",
+                        "name":  "NVIDIA AI Blog",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://blogs.nvidia.com/blog/category/deep-learning/feed/"
+                    },
+                    {
+                        "id":  "nvidia_robotics",
+                        "name":  "NVIDIA Robotics Blog",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://developer.nvidia.com/blog/category/robotics/feed/"
+                    },
+                    {
+                        "id":  "ieee_robotics",
+                        "name":  "IEEE Spectrum Robotics",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://spectrum.ieee.org/rss/robotics/fulltext"
+                    },
+                    {
+                        "id":  "robot_report",
+                        "name":  "The Robot Report",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://www.therobotreport.com/feed/"
+                    },
+                    {
+                        "id":  "robotics_automation_news",
+                        "name":  "Robotics \u0026 Automation News",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://roboticsandautomationnews.com/feed/"
+                    },
+                    {
+                        "id":  "robohub",
+                        "name":  "Robohub",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://robohub.org/feed/"
+                    },
+                    {
+                        "id":  "semianalysis",
+                        "name":  "SemiAnalysis",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://semianalysis.com/feed/"
+                    },
+                    {
+                        "id":  "hpcwire",
+                        "name":  "HPCwire",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://www.hpcwire.com/feed/"
+                    },
+                    {
+                        "id":  "serve_the_home",
+                        "name":  "ServeTheHome",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://www.servethehome.com/feed/"
+                    },
+                    {
+                        "id":  "next_platform",
+                        "name":  "The Next Platform",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://www.nextplatform.com/feed/"
+                    },
+                    {
+                        "id":  "datacenter_knowledge",
+                        "name":  "Data Center Knowledge",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://www.datacenterknowledge.com/rss.xml"
+                    },
+                    {
+                        "id":  "trailofbits",
+                        "name":  "Trail of Bits Blog",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://blog.trailofbits.com/feed/"
+                    },
+                    {
+                        "id":  "ethereum_blog",
+                        "name":  "Ethereum Blog",
+                        "type":  "rss",
+                        "priority":  2,
+                        "url":  "https://blog.ethereum.org/feed.xml"
+                    }
+                ]
+}

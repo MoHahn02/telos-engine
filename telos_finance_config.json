@@ -1,0 +1,434 @@
+﻿{
+    "version":  1,
+    "id":  "finance",
+    "title":  "Finance",
+    "output_dir":  "finance",
+    "lookback_hours":  48,
+    "storage_min_score":  3,
+    "max_items_per_source":  120,
+    "max_digest_items":  70,
+    "max_candidates":  25,
+    "max_dossiers":  10,
+    "min_dossier_relevance":  60,
+    "min_grounded_dossiers":  2,
+    "max_article_chars":  30000,
+    "max_llm_input_chars":  9000,
+    "fetch_timeout_seconds":  35,
+    "fetch_retries":  1,
+    "fetch_retry_delay_seconds":  6,
+    "fetch_min_domain_interval_seconds":  3,
+    "fetch_rate_limit_cooldown_seconds":  180,
+    "google_news_rate_limit_cooldown_seconds":  0,
+    "reader_api_fallback_enabled":  true,
+    "reader_api_timeout_seconds":  45,
+    "triage_fetch_delay_seconds":  0.8,
+    "research_focus":  "Material changes in rates, inflation, employment, liquidity, credit, currencies, earnings, guidance, capital expenditure, AI infrastructure demand, semiconductor supply, power and grid investment, robotics adoption, data-center construction, M\u0026A, regulation, and financing conditions. Distinguish price movement, company claims, actual financial results, and structural thesis evidence. This is research, not personalized investment advice.",
+    "negative_keywords":  [
+                              "stock picks",
+                              "buy now",
+                              "sponsored",
+                              "coupon",
+                              "price target roundup",
+                              "meme stock"
+                          ],
+    "blocked_publishers":  [
+                               "InvestorPlace",
+                               "Benzinga",
+                               "The Motley Fool",
+                               "StockStory",
+                               "MarketBeat",
+                               "GuruFocus",
+                               "MSN",
+                               "Autonocion.com",
+                               "Kalkine Media",
+                               "AD HOC NEWS",
+                               "AOL.com",
+                               "abhs.in",
+                               "NAI500",
+                               "simplywall.st",
+                               "Invezz",
+                               "Seeking Alpha",
+                               "TechStockÂ²"
+                           ],
+    "trusted_publishers":  [
+                               "Reuters",
+                               "Associated Press",
+                               "Bloomberg",
+                               "Financial Times",
+                               "Wall Street Journal",
+                               "CNBC",
+                               "Nikkei Asia",
+                               "Federal Reserve",
+                               "SEC",
+                               "ECB",
+                               "IMF",
+                               "BIS",
+                               "Bureau of Labor Statistics",
+                               "Bureau of Economic Analysis",
+                               "U.S. Energy Information Administration",
+                               "Semiconductor Industry Association",
+                               "Data Center Dynamics",
+                               "Utility Dive"
+                           ],
+    "headline_boost_keywords":  [
+                                    "earnings",
+                                    "guidance",
+                                    "capital expenditure",
+                                    "interest rate",
+                                    "inflation",
+                                    "employment",
+                                    "acquisition",
+                                    "bankruptcy",
+                                    "default",
+                                    "production",
+                                    "orders"
+                                ],
+    "llm_prefilter":  {
+                          "enabled":  true,
+                          "model":  "qwen3:4b-instruct",
+                          "max_items":  80,
+                          "batch_size":  20,
+                          "min_model_score":  55,
+                          "timeout_seconds":  900,
+                          "num_ctx":  8192,
+                          "num_predict":  1800
+                      },
+    "llm_report":  {
+                       "model":  "qwen3.5:9b",
+                       "triage_model":  "qwen3:4b-instruct",
+                       "triage_timeout_seconds":  300,
+                       "triage_num_ctx":  8192,
+                       "thinking":  true,
+                       "timeout_seconds":  900,
+                       "temperature":  0.15,
+                       "num_ctx":  12288,
+                       "num_predict":  1400,
+                       "finalizer_num_predict":  1100,
+                       "finalizer_timeout_seconds":  900
+                   },
+    "synthesis":  {
+                      "model":  "qwen3.5:9b",
+                      "thinking":  false,
+                      "max_input_chars":  28000,
+                      "timeout_seconds":  420,
+                      "temperature":  0.2,
+                      "num_ctx":  32768,
+                      "num_predict":  2200
+                  },
+    "topics":  [
+                   {
+                       "id":  "macro_rates",
+                       "label":  "Macro / Rates",
+                       "weight":  5,
+                       "keywords":  [
+                                        "interest rate",
+                                        "inflation",
+                                        "employment",
+                                        "payroll",
+                                        "gdp",
+                                        "recession",
+                                        "central bank",
+                                        "federal reserve",
+                                        "ecb",
+                                        "yield",
+                                        "liquidity"
+                                    ]
+                   },
+                   {
+                       "id":  "earnings_capex",
+                       "label":  "Earnings / Capex",
+                       "weight":  5,
+                       "keywords":  [
+                                        "earnings",
+                                        "revenue",
+                                        "guidance",
+                                        "capital expenditure",
+                                        "capex",
+                                        "free cash flow",
+                                        "margin",
+                                        "orders",
+                                        "backlog",
+                                        "production"
+                                    ]
+                   },
+                   {
+                       "id":  "ai_compute",
+                       "label":  "AI / Compute Markets",
+                       "weight":  5,
+                       "keywords":  [
+                                        "ai infrastructure",
+                                        "gpu",
+                                        "accelerator",
+                                        "semiconductor",
+                                        "data center",
+                                        "cloud",
+                                        "inference",
+                                        "training",
+                                        "hbm",
+                                        "foundry"
+                                    ]
+                   },
+                   {
+                       "id":  "energy_grid",
+                       "label":  "Energy / Grid",
+                       "weight":  5,
+                       "keywords":  [
+                                        "electricity",
+                                        "power purchase",
+                                        "nuclear",
+                                        "grid",
+                                        "transformer",
+                                        "natural gas",
+                                        "uranium",
+                                        "utility",
+                                        "data center power",
+                                        "cooling"
+                                    ]
+                   },
+                   {
+                       "id":  "robotics_industry",
+                       "label":  "Robotics / Industry",
+                       "weight":  4,
+                       "keywords":  [
+                                        "robotics",
+                                        "automation",
+                                        "humanoid",
+                                        "factory",
+                                        "warehouse",
+                                        "industrial",
+                                        "machine vision",
+                                        "motion control"
+                                    ]
+                   },
+                   {
+                       "id":  "software_agents",
+                       "label":  "Software / Agents",
+                       "weight":  4,
+                       "keywords":  [
+                                        "agent",
+                                        "copilot",
+                                        "software subscription",
+                                        "cloud software",
+                                        "cybersecurity",
+                                        "workflow",
+                                        "developer tools",
+                                        "database"
+                                    ]
+                   },
+                   {
+                       "id":  "science_biotech",
+                       "label":  "AI for Science / Biotech",
+                       "weight":  4,
+                       "keywords":  [
+                                        "drug discovery",
+                                        "laboratory automation",
+                                        "genomics",
+                                        "clinical trial",
+                                        "biotech",
+                                        "life science tools",
+                                        "ai for science"
+                                    ]
+                   },
+                   {
+                       "id":  "capital_markets",
+                       "label":  "Capital Markets",
+                       "weight":  4,
+                       "keywords":  [
+                                        "ipo",
+                                        "acquisition",
+                                        "merger",
+                                        "funding round",
+                                        "bond",
+                                        "credit",
+                                        "default",
+                                        "bankruptcy",
+                                        "share buyback",
+                                        "debt"
+                                    ]
+                   },
+                   {
+                       "id":  "crypto_payments",
+                       "label":  "Crypto / Payments",
+                       "weight":  3,
+                       "keywords":  [
+                                        "bitcoin",
+                                        "stablecoin",
+                                        "crypto",
+                                        "payment rail",
+                                        "mining",
+                                        "digital asset",
+                                        "tokenization"
+                                    ]
+                   }
+               ],
+    "sources":  [
+                    {
+                        "id":  "fed_all",
+                        "name":  "Federal Reserve Press Releases",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://www.federalreserve.gov/feeds/press_all.xml"
+                    },
+                    {
+                        "id":  "sec_press",
+                        "name":  "SEC Press Releases",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://www.sec.gov/news/pressreleases.rss"
+                    },
+                    {
+                        "id":  "google_us_treasury_finance",
+                        "name":  "Official Search - US Treasury",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://news.google.com/rss/search?q=site%3Ahome.treasury.gov%2Fnews+economy+finance+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "ecb_press",
+                        "name":  "ECB Press Releases",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://www.ecb.europa.eu/rss/press.html"
+                    },
+                    {
+                        "id":  "google_bls_macro",
+                        "name":  "Official Search - BLS Labor and Inflation",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://news.google.com/rss/search?q=site%3Abls.gov%2Fnews.release+CPI+OR+PPI+OR+employment+OR+payroll+when%3A7d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_bea_macro",
+                        "name":  "Official Search - BEA GDP and Income",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://news.google.com/rss/search?q=site%3Abea.gov%2Fnews+GDP+OR+income+OR+profits+when%3A7d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_eia_energy",
+                        "name":  "Official Search - EIA Energy Markets",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://news.google.com/rss/search?q=site%3Aeia.gov+electricity+OR+natural+gas+OR+power+prices+OR+nuclear+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_imf_news",
+                        "name":  "Official Search - IMF",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Aimf.org%2Fen%2FNews+economy+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_bis_press",
+                        "name":  "Official Search - BIS",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Abis.org+central+bank+finance+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_reuters_markets",
+                        "name":  "Google News - Reuters Markets",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Areuters.com%2Fmarkets+stocks+OR+bonds+OR+earnings+OR+rates+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_cnbc_markets",
+                        "name":  "Google News - CNBC Markets and Tech",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Acnbc.com+earnings+OR+data+center+OR+AI+capex+OR+markets+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_sia_semis",
+                        "name":  "Official Search - Semiconductor Industry Association",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Asemiconductors.org+semiconductor+sales+OR+policy+OR+chips+when%3A7d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_datacenterdynamics",
+                        "name":  "Google News - Data Center Dynamics",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Adatacenterdynamics.com+AI+data+center+power+OR+GPU+OR+capacity+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_utility_dive",
+                        "name":  "Google News - Utility Dive Grid",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Autilitydive.com+data+center+power+OR+grid+OR+utility+OR+nuclear+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_nvidia_ir",
+                        "name":  "Official Search - NVIDIA Investor News",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Anvidianews.nvidia.com+earnings+OR+data+center+OR+Blackwell+OR+guidance+when%3A7d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_asml_ir",
+                        "name":  "Official Search - ASML Investor News",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Aasml.com+investors+OR+press+release+orders+OR+guidance+when%3A7d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_tsmc_ir",
+                        "name":  "Official Search - TSMC Investor News",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Ainvestor.tsmc.com+revenue+OR+monthly+OR+capacity+OR+capex+when%3A7d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_fin_macro",
+                        "name":  "Google News - Macro Markets",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://news.google.com/rss/search?q=Federal+Reserve+inflation+employment+bond+yields+markets+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_fin_ai",
+                        "name":  "Google News - AI Companies and Capex",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://news.google.com/rss/search?q=AI+data+center+capex+earnings+semiconductor+cloud+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_fin_power",
+                        "name":  "Google News - Data Center Power",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://news.google.com/rss/search?q=data+center+power+grid+nuclear+utility+earnings+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_fin_robotics",
+                        "name":  "Google News - Robotics Markets",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://news.google.com/rss/search?q=robotics+automation+humanoid+factory+earnings+orders+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_fin_cyber",
+                        "name":  "Google News - Cyber and Agent Software",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://news.google.com/rss/search?q=cybersecurity+AI+agents+cloud+software+earnings+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_fin_science",
+                        "name":  "Google News - AI Science Markets",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://news.google.com/rss/search?q=AI+drug+discovery+lab+automation+genomics+funding+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_fin_crypto",
+                        "name":  "Google News - Crypto Compute Payments",
+                        "type":  "rss",
+                        "priority":  2,
+                        "url":  "https://news.google.com/rss/search?q=bitcoin+miners+AI+HPC+stablecoin+payments+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    }
+                ]
+}

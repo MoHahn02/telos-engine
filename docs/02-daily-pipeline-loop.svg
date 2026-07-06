@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="520" viewBox="0 0 1500 520" role="img" aria-label="Automatic Daily Telos Pipeline Loop">
+<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#101828" flood-opacity=".14"/></filter>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 10 5 L 0 10 z" fill="#748094"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#f6f7f9"/>
+<text x="40.0" y="46.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="760" text-anchor="start">Automatic Daily Telos Pipeline Loop</text>
+<text x="40.0" y="74.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="start">The scheduler starts data collection, then the system builds analysis, worldview and forecasts</text>
+<rect x="55.0" y="170.0" width="135.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="55.0" y="170.0" width="5" height="92.0" rx="2.5" fill="#2563eb"/>
+<text x="71.0" y="195.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Daily Trigger</text>
+<text x="71.0" y="218.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">06:00 scheduler</text>
+<rect x="214.0" y="170.0" width="135.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="214.0" y="170.0" width="5" height="92.0" rx="2.5" fill="#2563eb"/>
+<text x="230.0" y="195.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">AI Scan</text>
+<text x="230.0" y="218.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">sources and</text>
+<text x="230.0" y="235.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">candidates</text>
+<line x1="194.0" y1="216.0" x2="209.0" y2="216.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="373.0" y="170.0" width="135.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="373.0" y="170.0" width="5" height="92.0" rx="2.5" fill="#0f8a5f"/>
+<text x="389.0" y="195.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">AI Deep</text>
+<text x="389.0" y="218.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">dossiers and</text>
+<text x="389.0" y="235.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">synthesis</text>
+<line x1="353.0" y1="216.0" x2="368.0" y2="216.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="532.0" y="170.0" width="135.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="532.0" y="170.0" width="5" height="92.0" rx="2.5" fill="#a15c00"/>
+<text x="548.0" y="195.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Geopolitics</text>
+<text x="548.0" y="218.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">domain radar</text>
+<line x1="512.0" y1="216.0" x2="527.0" y2="216.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="691.0" y="170.0" width="135.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="691.0" y="170.0" width="5" height="92.0" rx="2.5" fill="#a15c00"/>
+<text x="707.0" y="195.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Finance</text>
+<text x="707.0" y="218.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">domain radar</text>
+<line x1="671.0" y1="216.0" x2="686.0" y2="216.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="850.0" y="170.0" width="135.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="850.0" y="170.0" width="5" height="92.0" rx="2.5" fill="#6d4aff"/>
+<text x="866.0" y="195.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Markets</text>
+<text x="866.0" y="218.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">Telos 100</text>
+<line x1="830.0" y1="216.0" x2="845.0" y2="216.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="1009.0" y="170.0" width="135.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="1009.0" y="170.0" width="5" height="92.0" rx="2.5" fill="#6d4aff"/>
+<text x="1025.0" y="195.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Worldview</text>
+<text x="1025.0" y="218.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">cross-domain model</text>
+<line x1="989.0" y1="216.0" x2="1004.0" y2="216.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="1168.0" y="170.0" width="135.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="1168.0" y="170.0" width="5" height="92.0" rx="2.5" fill="#0f8a5f"/>
+<text x="1184.0" y="195.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Personal</text>
+<text x="1184.0" y="218.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">German briefing</text>
+<line x1="1148.0" y1="216.0" x2="1163.0" y2="216.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="1327.0" y="170.0" width="135.0" height="92.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="1327.0" y="170.0" width="5" height="92.0" rx="2.5" fill="#c2413b"/>
+<text x="1343.0" y="195.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Dream</text>
+<text x="1343.0" y="218.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">forecasts and</text>
+<text x="1343.0" y="235.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">updates</text>
+<line x1="1307.0" y1="216.0" x2="1322.0" y2="216.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="350.0" y="320.0" width="465.0" height="105.0" rx="12" fill="#ffffff" stroke="#d5dce6" stroke-dasharray="6 5"/>
+<text x="366.0" y="346.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="740" text-anchor="start">Quality gates</text>
+<rect x="375.0" y="355.0" width="120.0" height="48.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="375.0" y="355.0" width="5" height="48.0" rx="2.5" fill="#c2413b"/>
+<text x="391.0" y="380.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="720" text-anchor="start">AI Gate</text>
+<rect x="525.0" y="355.0" width="120.0" height="48.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="525.0" y="355.0" width="5" height="48.0" rx="2.5" fill="#c2413b"/>
+<text x="541.0" y="380.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="720" text-anchor="start">Geo Gate</text>
+<rect x="675.0" y="355.0" width="120.0" height="48.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="675.0" y="355.0" width="5" height="48.0" rx="2.5" fill="#c2413b"/>
+<text x="691.0" y="380.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="720" text-anchor="start">Finance Gate</text>
+<path d="M 392 262 C 392 300 435 320 435 355" fill="none" stroke="#748094" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M 551 262 C 551 300 585 320 585 355" fill="none" stroke="#748094" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M 710 262 C 710 300 735 320 735 355" fill="none" stroke="#748094" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M 1340 262 C 1390 350 120 390 122 262" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="650.0" y="470.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" text-anchor="middle">Reports update the dashboard. Review and feedback improve tomorrow&#x27;s priorities.</text>
+</svg>

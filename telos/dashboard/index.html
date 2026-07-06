@@ -1,0 +1,1232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Telos Control Center</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --text: #15181d;
+      --muted: #657080;
+      --line: #dce1e8;
+      --blue: #2563eb;
+      --green: #0f8a5f;
+      --red: #c2413b;
+      --amber: #a15c00;
+      --ink: #27313f;
+      --shadow: 0 1px 2px rgba(16, 24, 40, .08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 14px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+      position: sticky;
+      top: 0;
+      z-index: 3;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 720;
+      letter-spacing: 0;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .report-center {
+      padding: 14px 18px 16px;
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .report-center-inner {
+      max-width: 1680px;
+      margin: 0 auto;
+    }
+
+    .report-title-row,
+    .report-toolbar,
+    .report-viewer-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .report-title-row h2 { margin: 0; font-size: 17px; }
+    .report-title-row p { margin: 3px 0 0; color: var(--muted); font-size: 12px; }
+    .report-progress { min-width: 180px; }
+    .report-progress .bar { margin: 5px 0 0; }
+
+    .report-toolbar {
+      justify-content: flex-start;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .report-toolbar select { width: auto; min-width: 150px; }
+
+    .manual-run {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+      min-width: min(100%, 360px);
+    }
+
+    .manual-run-status {
+      color: var(--muted);
+      font-size: 12px;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .report-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(150px, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .report-card {
+      min-height: 118px;
+      padding: 10px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 6px;
+      border-radius: 8px;
+      background: #fbfcfd;
+    }
+
+    .report-card:hover,
+    .report-card.active { border-color: #9ab8ff; background: #eef5ff; }
+    .report-card.pending { cursor: default; opacity: .58; background: #f6f7f9; }
+    .report-card.blocked { border-color: #e0a3a3; background: #fff4f4; }
+    .report-card strong { font-size: 13px; line-height: 1.25; }
+
+    .report-card .preview {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    .report-card-meta {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .report-viewer {
+      margin-top: 14px;
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+    }
+
+    .report-viewer[hidden] { display: none; }
+    .report-viewer-head h3 { margin: 0; font-size: 15px; }
+
+    .report-document {
+      margin-top: 10px;
+      max-height: 68vh;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      background: #fbfcfd;
+      color: var(--ink);
+    }
+
+    .report-document h1,
+    .report-document h2,
+    .report-document h3 { margin: 1.2em 0 .45em; line-height: 1.25; }
+    .report-document h1:first-child,
+    .report-document h2:first-child { margin-top: 0; }
+    .report-document p { margin: .55em 0; }
+    .report-document .md-bullet { padding-left: 18px; margin: .35em 0; }
+    .report-document .md-bullet::before { content: "-"; margin-left: -14px; margin-right: 8px; }
+    .report-document pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 3px rgba(15, 138, 95, .12);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(280px, 360px) minmax(420px, 1fr) minmax(280px, 380px);
+      gap: 14px;
+      padding: 14px;
+      min-height: calc(100vh - 58px);
+    }
+
+    section {
+      min-width: 0;
+    }
+
+    .stack { display: flex; flex-direction: column; gap: 12px; }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 12px 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel-head h2 {
+      margin: 0;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--ink);
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      padding: 12px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      min-height: 76px;
+      background: #fbfcfd;
+    }
+
+    .metric b {
+      display: block;
+      font-size: 24px;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    input, select, textarea, button {
+      font: inherit;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 8px 9px;
+      color: var(--text);
+      background: #fff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 72px;
+      line-height: 1.4;
+    }
+
+    button {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 8px 12px;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      font-weight: 650;
+    }
+
+    button.primary {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: #fff;
+    }
+
+    button:disabled {
+      cursor: wait;
+      opacity: .55;
+    }
+
+    .chat-controls {
+      display: grid;
+      grid-template-columns: minmax(150px, 220px) 1fr auto;
+      gap: 8px;
+      align-items: center;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .chat-log {
+      min-height: 240px;
+      max-height: 390px;
+      overflow: auto;
+      padding: 12px;
+      background: #f9fafb;
+    }
+
+    .chat-message {
+      width: fit-content;
+      max-width: 88%;
+      margin: 0 0 10px;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .chat-message.user {
+      margin-left: auto;
+      border-color: #bfd2ff;
+      background: #eef5ff;
+    }
+
+    .chat-message.pending {
+      color: var(--muted);
+    }
+
+    .chat-compose {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: end;
+      padding: 10px 12px 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .chat-status {
+      padding: 0 12px 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .list {
+      max-height: calc(100vh - 160px);
+      overflow: auto;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 10px;
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+      background: #fff;
+    }
+
+    .item:hover,
+    .item.active {
+      background: #eef5ff;
+    }
+
+    .score {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 760;
+      color: #fff;
+      background: var(--blue);
+    }
+
+    .score.low { background: var(--red); }
+    .score.mid { background: var(--amber); }
+    .score.high { background: var(--green); }
+
+    .item h3 {
+      margin: 0 0 5px;
+      font-size: 13px;
+      line-height: 1.25;
+      font-weight: 680;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      height: 22px;
+      padding: 0 7px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .graph-wrap {
+      min-height: 440px;
+      height: calc(100vh - 250px);
+      position: relative;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(#eef1f5 1px, transparent 1px),
+        linear-gradient(90deg, #eef1f5 1px, transparent 1px);
+      background-size: 34px 34px;
+    }
+
+    .detail {
+      padding: 13px;
+    }
+
+    .detail h2 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    .detail p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .bar {
+      height: 10px;
+      border-radius: 999px;
+      background: #e8ecf2;
+      overflow: hidden;
+      margin: 8px 0 12px;
+    }
+
+    .fill {
+      height: 100%;
+      background: var(--green);
+      width: 0;
+      transition: width .25s ease;
+    }
+
+    .fill.mid { background: var(--amber); }
+    .fill.low { background: var(--red); }
+
+    .evidence {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .evidence strong {
+      color: var(--ink);
+      font-weight: 680;
+    }
+
+    .evidence p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .empty {
+      padding: 18px 12px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 1080px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      .list, .graph-wrap {
+        max-height: none;
+        height: 520px;
+      }
+      .metric-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .chat-controls {
+        grid-template-columns: 1fr auto;
+      }
+      .chat-controls .small {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+      .report-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      header { padding: 12px; }
+      .report-center { padding: 12px; }
+      .report-title-row { align-items: flex-start; }
+      .report-progress { min-width: 110px; }
+      .report-toolbar { flex-wrap: wrap; }
+      .report-toolbar select { flex: 1; min-width: 130px; }
+      .manual-run { margin-left: 0; width: 100%; }
+      .manual-run button { flex: 0 0 auto; }
+      .manual-run-status { white-space: normal; }
+      .report-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .report-card { min-height: 108px; }
+      .report-document { padding: 12px; max-height: 62vh; }
+      main { padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Telos Control Center</h1>
+    <div class="status">
+      <span class="dot" id="liveDot"></span>
+      <span id="lastUpdate">Loading</span>
+    </div>
+  </header>
+
+  <div class="report-center">
+    <div class="report-center-inner">
+      <div class="report-title-row">
+        <div>
+          <h2>Daily Intelligence Reports</h2>
+          <p id="reportUpdated">Checking today's pipeline outputs</p>
+        </div>
+        <div class="report-progress">
+          <div class="meta"><strong id="reportCompletion">0 / 0</strong><span id="reportPercent">0%</span></div>
+          <div class="bar"><div class="fill" id="reportProgressFill"></div></div>
+        </div>
+      </div>
+      <div class="report-toolbar">
+        <select id="reportCenterDay" aria-label="Report center date"></select>
+        <select id="reportCategory" aria-label="Report category">
+          <option value="all">All report groups</option>
+        </select>
+        <button id="refreshReports" type="button">Refresh</button>
+        <span class="small" id="reportPollStatus">Updates automatically</span>
+        <div class="manual-run">
+          <button class="primary" id="startTelosRun" type="button">Run Telos</button>
+          <span class="manual-run-status" id="telosRunStatus">Manual only</span>
+        </div>
+      </div>
+      <div class="report-grid" id="reportGrid"></div>
+      <div class="report-viewer" id="reportViewer" hidden>
+        <div class="report-viewer-head">
+          <div>
+            <h3 id="reportViewerTitle">Report</h3>
+            <div class="small" id="reportViewerMeta"></div>
+          </div>
+          <button id="closeReport" type="button">Close</button>
+        </div>
+        <div class="report-document" id="reportDocument"></div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="stack">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Priority Stack</h2>
+          <span class="badge" id="itemCount">0 items</span>
+        </div>
+        <div class="toolbar">
+          <input id="search" placeholder="Filter claims and beliefs">
+          <select id="kind">
+            <option value="all">All</option>
+            <option value="belief">Beliefs</option>
+            <option value="claim">Claims</option>
+          </select>
+        </div>
+        <div class="list" id="priorityList"></div>
+      </div>
+    </section>
+
+    <section class="stack">
+      <div class="panel">
+        <div class="metric-grid">
+          <div class="metric"><b id="beliefCount">0</b><span>beliefs</span></div>
+          <div class="metric"><b id="claimCount">0</b><span>claims</span></div>
+          <div class="metric"><b id="evidenceCount">0</b><span>evidence items</span></div>
+          <div class="metric"><b id="reviewCount">0</b><span>reviews</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Daily Report Chat</h2>
+          <span class="badge">qwen3.5:9b local</span>
+        </div>
+        <div class="chat-controls">
+          <select id="reportDay" aria-label="Daily report date"></select>
+          <span class="small">Context: synthesis, review, evidence queue and daily report</span>
+          <button id="clearChat" type="button">Clear</button>
+        </div>
+        <div class="chat-log" id="chatLog">
+          <div class="empty">Choose a day and ask Qwen about its report.</div>
+        </div>
+        <div class="chat-compose">
+          <textarea id="chatInput" placeholder="Ask what changed, which thesis moved, or what deserves a deeper review"></textarea>
+          <button class="primary" id="sendChat" type="button">Send</button>
+        </div>
+        <div class="chat-status" id="chatStatus">Local only. Chat does not change beliefs or evidence.</div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Belief Graph</h2>
+          <span class="badge">size = confidence</span>
+        </div>
+        <div class="graph-wrap">
+          <svg id="graph" role="img" aria-label="Telos belief graph"></svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Selected Node</h2>
+          <span class="badge" id="selectedKind">none</span>
+        </div>
+        <div class="detail" id="detail">
+          <p>Select a claim or belief.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Recent Evidence</h2>
+        </div>
+        <div id="recentEvidence"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Recent Reviews</h2>
+        </div>
+        <div id="reviews"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const state = {
+      data: null,
+      selectedId: null,
+      lastMtime: null,
+      chatHistory: [],
+      chatBusy: false,
+      reportData: null,
+      reportDayTouched: false,
+      selectedReportPath: null
+    };
+    const els = {
+      lastUpdate: document.getElementById('lastUpdate'),
+      liveDot: document.getElementById('liveDot'),
+      itemCount: document.getElementById('itemCount'),
+      beliefCount: document.getElementById('beliefCount'),
+      claimCount: document.getElementById('claimCount'),
+      evidenceCount: document.getElementById('evidenceCount'),
+      reviewCount: document.getElementById('reviewCount'),
+      priorityList: document.getElementById('priorityList'),
+      graph: document.getElementById('graph'),
+      detail: document.getElementById('detail'),
+      selectedKind: document.getElementById('selectedKind'),
+      recentEvidence: document.getElementById('recentEvidence'),
+      reviews: document.getElementById('reviews'),
+      search: document.getElementById('search'),
+      kind: document.getElementById('kind'),
+      reportDay: document.getElementById('reportDay'),
+      chatLog: document.getElementById('chatLog'),
+      chatInput: document.getElementById('chatInput'),
+      sendChat: document.getElementById('sendChat'),
+      clearChat: document.getElementById('clearChat'),
+      chatStatus: document.getElementById('chatStatus'),
+      reportCenterDay: document.getElementById('reportCenterDay'),
+      reportCategory: document.getElementById('reportCategory'),
+      reportGrid: document.getElementById('reportGrid'),
+      reportUpdated: document.getElementById('reportUpdated'),
+      reportCompletion: document.getElementById('reportCompletion'),
+      reportPercent: document.getElementById('reportPercent'),
+      reportProgressFill: document.getElementById('reportProgressFill'),
+      reportPollStatus: document.getElementById('reportPollStatus'),
+      refreshReports: document.getElementById('refreshReports'),
+      startTelosRun: document.getElementById('startTelosRun'),
+      telosRunStatus: document.getElementById('telosRunStatus'),
+      reportViewer: document.getElementById('reportViewer'),
+      reportViewerTitle: document.getElementById('reportViewerTitle'),
+      reportViewerMeta: document.getElementById('reportViewerMeta'),
+      reportDocument: document.getElementById('reportDocument'),
+      closeReport: document.getElementById('closeReport')
+    };
+
+    function pct(value) {
+      return Math.round((Number(value) || 0) * 100);
+    }
+
+    function cls(value) {
+      const p = pct(value);
+      if (p < 45) return 'low';
+      if (p < 70) return 'mid';
+      return 'high';
+    }
+
+    function short(text, n = 150) {
+      text = String(text || '').replace(/\s+/g, ' ').trim();
+      return text.length > n ? text.slice(0, n - 1) + '…' : text;
+    }
+
+    function formatBytes(value) {
+      const bytes = Number(value) || 0;
+      if (bytes < 1024) return `${bytes} B`;
+      return `${(bytes / 1024).toFixed(bytes < 10240 ? 1 : 0)} KB`;
+    }
+
+    function formatTime(value) {
+      if (!value) return 'pending';
+      return new Date(value).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    }
+
+    function inlineMarkdown(value) {
+      return escapeHtml(value)
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    }
+
+    function renderMarkdown(value, isJson = false) {
+      if (isJson) return `<pre>${escapeHtml(value)}</pre>`;
+      const rows = [];
+      let inCode = false;
+      let code = [];
+      String(value || '').split(/\r?\n/).forEach(line => {
+        if (line.trim().startsWith('```')) {
+          if (inCode) {
+            rows.push(`<pre>${escapeHtml(code.join('\n'))}</pre>`);
+            code = [];
+          }
+          inCode = !inCode;
+          return;
+        }
+        if (inCode) {
+          code.push(line);
+          return;
+        }
+        const heading = line.match(/^(#{1,3})\s+(.+)$/);
+        if (heading) {
+          const level = heading[1].length;
+          rows.push(`<h${level}>${inlineMarkdown(heading[2])}</h${level}>`);
+        } else if (/^[-*]\s+/.test(line)) {
+          rows.push(`<div class="md-bullet">${inlineMarkdown(line.replace(/^[-*]\s+/, ''))}</div>`);
+        } else if (/^---+$/.test(line.trim())) {
+          rows.push('<hr>');
+        } else if (line.trim()) {
+          rows.push(`<p>${inlineMarkdown(line)}</p>`);
+        } else {
+          rows.push('');
+        }
+      });
+      if (code.length) rows.push(`<pre>${escapeHtml(code.join('\n'))}</pre>`);
+      return rows.join('\n');
+    }
+
+    function allItems() {
+      if (!state.data) return [];
+      const beliefs = state.data.beliefs.map(x => ({ ...x, kind: 'belief', weight: x.priority }));
+      const claims = state.data.claims.map(x => ({ ...x, kind: 'claim', weight: x.importance }));
+      return [...beliefs, ...claims].sort((a, b) => {
+        return (b.weight - a.weight) || (b.effective_confidence - a.effective_confidence);
+      });
+    }
+
+    function visibleItems() {
+      const q = els.search.value.trim().toLowerCase();
+      const k = els.kind.value;
+      return allItems().filter(item => {
+        if (k !== 'all' && item.kind !== k) return false;
+        if (!q) return true;
+        return item.text.toLowerCase().includes(q) || item.id.toLowerCase().includes(q) || item.type.toLowerCase().includes(q);
+      });
+    }
+
+    function renderList() {
+      const items = visibleItems();
+      els.itemCount.textContent = `${items.length} items`;
+      if (!items.length) {
+        els.priorityList.innerHTML = '<div class="empty">No matching claims or beliefs.</div>';
+        return;
+      }
+      els.priorityList.innerHTML = items.map(item => `
+        <div class="item ${item.id === state.selectedId ? 'active' : ''}" data-id="${item.id}">
+          <div class="score ${cls(item.effective_confidence)}">${pct(item.effective_confidence)}</div>
+          <div>
+            <h3>${escapeHtml(short(item.text, 112))}</h3>
+            <div class="meta">
+              <span>${item.kind}</span>
+              <span>${item.type}</span>
+              <span>weight ${Number(item.weight).toFixed(2)}</span>
+              <span>${item.evidence.for_count}/${item.evidence.against_count} evd</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+      els.priorityList.querySelectorAll('.item').forEach(node => {
+        node.addEventListener('click', () => {
+          state.selectedId = node.dataset.id;
+          renderAll();
+        });
+      });
+    }
+
+    function renderDetail() {
+      const item = allItems().find(x => x.id === state.selectedId) || allItems()[0];
+      if (!item) {
+        els.detail.innerHTML = '<p>No claims or beliefs loaded.</p>';
+        els.selectedKind.textContent = 'none';
+        return;
+      }
+      state.selectedId = item.id;
+      els.selectedKind.textContent = item.kind;
+      const c = pct(item.effective_confidence);
+      els.detail.innerHTML = `
+        <h2>${escapeHtml(item.text)}</h2>
+        <p>${escapeHtml(item.id)} · ${escapeHtml(item.type)} · ${escapeHtml(item.status)}</p>
+        <div class="bar"><div class="fill ${cls(item.effective_confidence)}" style="width:${c}%"></div></div>
+        <div class="meta">
+          <span class="badge">confidence ${c}%</span>
+          <span class="badge">base ${pct(item.confidence)}%</span>
+          <span class="badge">stability ${pct(item.stability)}%</span>
+          <span class="badge">net evidence ${Number(item.evidence.net).toFixed(2)}</span>
+        </div>
+        <h3>Recent Evidence</h3>
+        ${renderEvidenceList(item.recent_evidence)}
+      `;
+    }
+
+    function renderEvidenceList(items) {
+      if (!items || !items.length) return '<p class="small">No evidence attached yet.</p>';
+      return items.map(e => `
+        <div class="evidence">
+          <strong>${e.polarity} · reliability ${Number(e.reliability).toFixed(2)}</strong>
+          <p>${escapeHtml(short(e.text, 240))}</p>
+          ${e.source ? `<p class="small">${escapeHtml(short(e.source, 150))}</p>` : ''}
+        </div>
+      `).join('');
+    }
+
+    function renderRecent() {
+      els.recentEvidence.innerHTML = renderEvidenceList(state.data.recent_evidence);
+      els.reviews.innerHTML = (state.data.reviews || []).length ? state.data.reviews.map(r => `
+        <div class="evidence">
+          <strong>${escapeHtml(r.target_type || 'review')} ${escapeHtml(r.target_id || '')}</strong>
+          <p>${escapeHtml(short(r.text, 260))}</p>
+          <p class="small">${escapeHtml(r.created_at)}</p>
+        </div>
+      `).join('') : '<div class="empty">No reviews yet.</div>';
+    }
+
+    function renderGraph() {
+      const svg = els.graph;
+      const rect = svg.getBoundingClientRect();
+      const w = Math.max(420, rect.width || 800);
+      const h = Math.max(420, rect.height || 520);
+      svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+      const nodes = (state.data.graph.nodes || []).slice(0, 52);
+      const edges = state.data.graph.edges || [];
+      const centerX = w / 2;
+      const centerY = h / 2;
+      const beliefNodes = nodes.filter(n => n.kind === 'belief');
+      const claimNodes = nodes.filter(n => n.kind === 'claim');
+      const placed = new Map();
+
+      beliefNodes.forEach((node, i) => {
+        const angle = (i / Math.max(1, beliefNodes.length)) * Math.PI * 2 - Math.PI / 2;
+        const radius = Math.min(w, h) * 0.19;
+        placed.set(node.id, { ...node, x: centerX + Math.cos(angle) * radius, y: centerY + Math.sin(angle) * radius });
+      });
+      claimNodes.forEach((node, i) => {
+        const angle = (i / Math.max(1, claimNodes.length)) * Math.PI * 2 - Math.PI / 2;
+        const radius = Math.min(w, h) * 0.39;
+        placed.set(node.id, { ...node, x: centerX + Math.cos(angle) * radius, y: centerY + Math.sin(angle) * radius });
+      });
+
+      const edgeSvg = edges.map(edge => {
+        const a = placed.get(edge.from);
+        const b = placed.get(edge.to);
+        if (!a || !b) return '';
+        return `<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="#b8c1ce" stroke-width="1.5" />`;
+      }).join('');
+      const nodeSvg = [...placed.values()].map(node => {
+        const r = 8 + pct(node.confidence) / 8;
+        const color = node.kind === 'belief' ? '#2563eb' : (pct(node.confidence) >= 70 ? '#0f8a5f' : pct(node.confidence) >= 45 ? '#a15c00' : '#c2413b');
+        const selected = node.id === state.selectedId;
+        return `
+          <g class="graph-node" data-id="${node.id}" style="cursor:pointer">
+            <circle cx="${node.x}" cy="${node.y}" r="${r + (selected ? 5 : 0)}" fill="${selected ? '#111827' : color}" opacity="${selected ? '1' : '.9'}"></circle>
+            <circle cx="${node.x}" cy="${node.y}" r="${r}" fill="${color}"></circle>
+            <text x="${node.x}" y="${node.y + r + 14}" text-anchor="middle" font-size="11" fill="#354052">${escapeHtml(short(node.label, 28))}</text>
+          </g>
+        `;
+      }).join('');
+      svg.innerHTML = edgeSvg + nodeSvg;
+      svg.querySelectorAll('.graph-node').forEach(node => {
+        node.addEventListener('click', () => {
+          state.selectedId = node.dataset.id;
+          renderAll();
+        });
+      });
+    }
+
+    function renderAll() {
+      if (!state.data) return;
+      els.beliefCount.textContent = state.data.summary.beliefs;
+      els.claimCount.textContent = state.data.summary.claims;
+      els.evidenceCount.textContent = state.data.summary.evidence;
+      els.reviewCount.textContent = state.data.summary.reviews;
+      renderList();
+      renderDetail();
+      renderRecent();
+      renderGraph();
+    }
+
+    async function load() {
+      try {
+        const res = await fetch('/api/state?limit=120', { cache: 'no-store' });
+        const data = await res.json();
+        state.data = data;
+        els.liveDot.style.background = '#0f8a5f';
+        const changed = state.lastMtime && state.lastMtime !== data.db_mtime;
+        state.lastMtime = data.db_mtime;
+        els.lastUpdate.textContent = `${changed ? 'Updated' : 'Live'} · DB ${new Date(data.db_mtime_iso).toLocaleTimeString()}`;
+        if (!state.selectedId && allItems().length) state.selectedId = allItems()[0].id;
+        renderAll();
+      } catch (err) {
+        els.liveDot.style.background = '#c2413b';
+        els.lastUpdate.textContent = 'Disconnected';
+      }
+    }
+
+    async function loadReportDays() {
+      try {
+        const res = await fetch('/api/report-days', { cache: 'no-store' });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Could not load report dates.');
+        els.reportDay.innerHTML = (data.days || []).map(day => (
+          `<option value="${escapeHtml(day)}">${escapeHtml(day)}</option>`
+        )).join('');
+        if (!data.days || !data.days.length) {
+          els.reportDay.innerHTML = '<option value="">No reports found</option>';
+          els.chatInput.disabled = true;
+          els.sendChat.disabled = true;
+        }
+      } catch (err) {
+        els.chatStatus.textContent = err.message;
+        els.chatInput.disabled = true;
+        els.sendChat.disabled = true;
+      }
+    }
+
+    function renderReportCatalog() {
+      if (!state.reportData) return;
+      const data = state.reportData;
+      const selectedCategory = els.reportCategory.value || 'all';
+      const categories = [...new Set(data.reports.map(item => item.category))];
+      const currentCategory = els.reportCategory.value;
+      els.reportCategory.innerHTML = '<option value="all">All report groups</option>' + categories.map(category => (
+        `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`
+      )).join('');
+      if ([...els.reportCategory.options].some(option => option.value === currentCategory)) {
+        els.reportCategory.value = currentCategory;
+      }
+
+      const category = els.reportCategory.value || selectedCategory;
+      const reports = data.reports.filter(item => category === 'all' || item.category === category);
+      els.reportGrid.innerHTML = reports.map(item => {
+        const active = item.path === state.selectedReportPath ? 'active' : '';
+        if (!item.exists) {
+          return `<button class="report-card pending" type="button" disabled>
+            <span class="badge">${escapeHtml(item.category)}</span>
+            <strong>${escapeHtml(item.title)}</strong>
+            <span class="preview">Waiting for this pipeline stage.</span>
+            <span class="report-card-meta"><span>Pending</span><span>${item.required ? 'expected' : 'optional'}</span></span>
+          </button>`;
+        }
+        const qualityClass = item.approved ? '' : 'blocked';
+        const qualityLabel = item.approved ? 'Approved' : 'Blocked';
+        return `<button class="report-card ${active} ${qualityClass}" type="button" data-report-path="${escapeHtml(item.path)}" data-report-title="${escapeHtml(item.title)}">
+          <span class="badge">${escapeHtml(item.category)}</span>
+          <strong>${escapeHtml(item.title)}</strong>
+          <span class="preview">${escapeHtml(item.preview || 'Open report')}</span>
+          <span class="report-card-meta"><span>${qualityLabel}</span><span>${formatBytes(item.size)}</span></span>
+        </button>`;
+      }).join('');
+
+      const summary = data.summary;
+      els.reportCompletion.textContent = `${summary.complete} / ${summary.total}`;
+      els.reportPercent.textContent = `${summary.percent}%`;
+      els.reportProgressFill.style.width = `${summary.percent}%`;
+      els.reportProgressFill.className = `fill ${summary.percent < 50 ? 'low' : summary.percent < 100 ? 'mid' : ''}`;
+      els.reportUpdated.textContent = summary.latest_modified_at
+        ? `${data.day} | latest output ${formatTime(summary.latest_modified_at)}`
+        : `${data.day} | no outputs yet`;
+      els.reportPollStatus.textContent = `Checked ${new Date(data.generated_at).toLocaleTimeString()}`;
+
+      els.reportGrid.querySelectorAll('[data-report-path]').forEach(button => {
+        button.addEventListener('click', () => openReport(button.dataset.reportPath, button.dataset.reportTitle));
+      });
+    }
+
+    async function loadReports(force = false) {
+      try {
+        const selected = els.reportCenterDay.value;
+        const url = state.reportDayTouched && selected
+          ? `/api/reports?day=${encodeURIComponent(selected)}`
+          : '/api/reports';
+        const res = await fetch(url, { cache: 'no-store' });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Could not load reports.');
+
+        const keepDay = state.reportDayTouched && selected && data.days.includes(selected);
+        els.reportCenterDay.innerHTML = data.days.map(day => `<option value="${escapeHtml(day)}">${escapeHtml(day)}</option>`).join('');
+        els.reportCenterDay.value = keepDay ? selected : data.day;
+        state.reportData = data;
+        renderReportCatalog();
+      } catch (err) {
+        els.reportPollStatus.textContent = err.message;
+      }
+    }
+
+    function renderTelosRunStatus(data) {
+      const stateLabel = data && data.state ? data.state : 'idle';
+      if (stateLabel === 'running') {
+        els.startTelosRun.disabled = true;
+        els.telosRunStatus.textContent = `Running PID ${data.pid || '?'} · ${data.log_path || 'log pending'}`;
+      } else if (stateLabel === 'unknown') {
+        els.startTelosRun.disabled = false;
+        els.telosRunStatus.textContent = data.note || 'Last run ended; inspect log';
+      } else {
+        els.startTelosRun.disabled = false;
+        els.telosRunStatus.textContent = data && data.log_path
+          ? `Last ${stateLabel} · ${data.log_path}`
+          : 'Manual only';
+      }
+    }
+
+    async function loadTelosRunStatus() {
+      try {
+        const res = await fetch('/api/telos-run', { cache: 'no-store' });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Could not read run status.');
+        renderTelosRunStatus(data);
+      } catch (err) {
+        els.startTelosRun.disabled = false;
+        els.telosRunStatus.textContent = err.message;
+      }
+    }
+
+    async function startTelosRun() {
+      if (els.startTelosRun.disabled) return;
+      els.startTelosRun.disabled = true;
+      els.telosRunStatus.textContent = 'Starting manual Telos run...';
+      try {
+        const res = await fetch('/api/telos-run', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ force_dream: true })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Could not start Telos run.');
+        renderTelosRunStatus(data);
+        setTimeout(() => loadReports(true), 2000);
+      } catch (err) {
+        els.startTelosRun.disabled = false;
+        els.telosRunStatus.textContent = err.message;
+      }
+    }
+
+    async function openReport(path, title) {
+      state.selectedReportPath = path;
+      renderReportCatalog();
+      els.reportViewer.hidden = false;
+      els.reportViewerTitle.textContent = title;
+      els.reportViewerMeta.textContent = 'Loading document';
+      els.reportDocument.innerHTML = '<div class="empty">Loading report...</div>';
+      try {
+        const res = await fetch(`/api/report-file?path=${encodeURIComponent(path)}`, { cache: 'no-store' });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Could not open report.');
+        els.reportViewerMeta.textContent = `${data.path} | ${formatTime(data.modified_at)}`;
+        els.reportDocument.innerHTML = renderMarkdown(data.content, data.name.endsWith('.json'));
+        els.reportViewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } catch (err) {
+        els.reportDocument.innerHTML = `<div class="empty">${escapeHtml(err.message)}</div>`;
+      }
+    }
+
+    function renderChat(pending = false) {
+      const rows = state.chatHistory.map(item => {
+        const role = item.role === 'user' ? 'user' : 'assistant';
+        return `<div class="chat-message ${role}">${escapeHtml(item.content)}</div>`;
+      });
+      if (pending) {
+        rows.push('<div class="chat-message assistant pending">Qwen is reading and comparing the report...</div>');
+      }
+      els.chatLog.innerHTML = rows.length
+        ? rows.join('')
+        : '<div class="empty">Choose a day and ask Qwen about its report.</div>';
+      els.chatLog.scrollTop = els.chatLog.scrollHeight;
+    }
+
+    function setChatBusy(busy) {
+      state.chatBusy = busy;
+      els.sendChat.disabled = busy;
+      els.reportDay.disabled = busy;
+      els.clearChat.disabled = busy;
+      els.chatInput.disabled = busy;
+    }
+
+    async function submitChat() {
+      const day = els.reportDay.value;
+      const message = els.chatInput.value.trim();
+      if (!day || !message || state.chatBusy) return;
+
+      const priorHistory = state.chatHistory.slice(-8);
+      state.chatHistory.push({ role: 'user', content: message });
+      els.chatInput.value = '';
+      setChatBusy(true);
+      renderChat(true);
+      els.chatStatus.textContent = `Qwen is analyzing the ${day} report locally. This can take a few minutes.`;
+
+      try {
+        const res = await fetch('/api/report-chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ day, message, history: priorHistory })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Report chat failed.');
+        state.chatHistory.push({ role: 'assistant', content: data.answer });
+        els.chatStatus.textContent = `${data.model} | ${data.day} | ${data.context_files.length} context files`;
+      } catch (err) {
+        state.chatHistory.push({ role: 'assistant', content: `Error: ${err.message}` });
+        els.chatStatus.textContent = 'The local report chat could not complete.';
+      } finally {
+        setChatBusy(false);
+        renderChat(false);
+        els.chatInput.focus();
+      }
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? '').replace(/[&<>"']/g, ch => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+      }[ch]));
+    }
+
+    els.search.addEventListener('input', renderAll);
+    els.kind.addEventListener('change', renderAll);
+    els.sendChat.addEventListener('click', submitChat);
+    els.clearChat.addEventListener('click', () => {
+      state.chatHistory = [];
+      renderChat();
+      els.chatStatus.textContent = 'Local only. Chat does not change beliefs or evidence.';
+    });
+    els.reportDay.addEventListener('change', () => {
+      state.chatHistory = [];
+      renderChat();
+      els.chatStatus.textContent = `Ready with the ${els.reportDay.value} report.`;
+    });
+    els.reportCenterDay.addEventListener('change', () => {
+      state.reportDayTouched = true;
+      state.selectedReportPath = null;
+      els.reportViewer.hidden = true;
+      loadReports(true);
+      if ([...els.reportDay.options].some(option => option.value === els.reportCenterDay.value)) {
+        els.reportDay.value = els.reportCenterDay.value;
+        state.chatHistory = [];
+        renderChat();
+      }
+    });
+    els.reportCategory.addEventListener('change', renderReportCatalog);
+    els.refreshReports.addEventListener('click', () => loadReports(true));
+    els.startTelosRun.addEventListener('click', startTelosRun);
+    els.closeReport.addEventListener('click', () => {
+      state.selectedReportPath = null;
+      els.reportViewer.hidden = true;
+      renderReportCatalog();
+    });
+    els.chatInput.addEventListener('keydown', event => {
+      if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        submitChat();
+      }
+    });
+    window.addEventListener('resize', () => state.data && renderGraph());
+
+    load();
+    loadReportDays();
+    loadReports();
+    loadTelosRunStatus();
+    setInterval(load, 5000);
+    setInterval(loadReports, 15000);
+    setInterval(loadTelosRunStatus, 10000);
+  </script>
+</body>
+</html>

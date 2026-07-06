@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-label="How Telos Knowledge Evolves">
+<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#101828" flood-opacity=".14"/></filter>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 10 5 L 0 10 z" fill="#748094"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#f6f7f9"/>
+<text x="40.0" y="46.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="760" text-anchor="start">How Telos Knowledge Evolves</text>
+<text x="40.0" y="74.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="start">From raw signals to reviewed evidence, claims, beliefs and calibrated forecasts</text>
+<rect x="80.0" y="145.0" width="190.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="80.0" y="145.0" width="5" height="82.0" rx="2.5" fill="#2563eb"/>
+<text x="96.0" y="170.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Raw Signal</text>
+<text x="96.0" y="193.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">article, release, market</text>
+<text x="96.0" y="210.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">move, note</text>
+<rect x="330.0" y="145.0" width="190.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="330.0" y="145.0" width="5" height="82.0" rx="2.5" fill="#2563eb"/>
+<text x="346.0" y="170.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Candidate</text>
+<text x="346.0" y="193.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">score, topic, source</text>
+<rect x="580.0" y="145.0" width="190.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="580.0" y="145.0" width="5" height="82.0" rx="2.5" fill="#0f8a5f"/>
+<text x="596.0" y="170.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Dossier</text>
+<text x="596.0" y="193.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">verified core and limits</text>
+<rect x="830.0" y="145.0" width="190.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="830.0" y="145.0" width="5" height="82.0" rx="2.5" fill="#a15c00"/>
+<text x="846.0" y="170.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Update Queue</text>
+<text x="846.0" y="193.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">candidate evidence, not</text>
+<text x="846.0" y="210.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">truth</text>
+<rect x="1080.0" y="145.0" width="190.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="1080.0" y="145.0" width="5" height="82.0" rx="2.5" fill="#a15c00"/>
+<text x="1096.0" y="170.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Source Review</text>
+<text x="1096.0" y="193.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">exact claim comparison</text>
+<rect x="1080.0" y="330.0" width="190.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="1080.0" y="330.0" width="5" height="82.0" rx="2.5" fill="#0f8a5f"/>
+<text x="1096.0" y="355.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Evidence</text>
+<text x="1096.0" y="378.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">for / against plus</text>
+<text x="1096.0" y="395.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">reliability</text>
+<rect x="830.0" y="330.0" width="190.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="830.0" y="330.0" width="5" height="82.0" rx="2.5" fill="#6d4aff"/>
+<text x="846.0" y="355.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Claim</text>
+<text x="846.0" y="378.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">testable statement</text>
+<rect x="580.0" y="330.0" width="190.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="580.0" y="330.0" width="5" height="82.0" rx="2.5" fill="#6d4aff"/>
+<text x="596.0" y="355.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Belief</text>
+<text x="596.0" y="378.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">stable action-shaping</text>
+<text x="596.0" y="395.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">assumption</text>
+<rect x="330.0" y="515.0" width="190.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="330.0" y="515.0" width="5" height="82.0" rx="2.5" fill="#c2413b"/>
+<text x="346.0" y="540.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Forecast</text>
+<text x="346.0" y="563.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">observable probability</text>
+<rect x="580.0" y="515.0" width="190.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="580.0" y="515.0" width="5" height="82.0" rx="2.5" fill="#c2413b"/>
+<text x="596.0" y="540.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Calibration</text>
+<text x="596.0" y="563.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">resolution and Brier</text>
+<text x="596.0" y="580.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">score</text>
+<rect x="830.0" y="515.0" width="190.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="830.0" y="515.0" width="5" height="82.0" rx="2.5" fill="#2563eb"/>
+<text x="846.0" y="540.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">World Model</text>
+<text x="846.0" y="563.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">priorities and causal</text>
+<text x="846.0" y="580.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">chains</text>
+<rect x="80.0" y="515.0" width="190.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="80.0" y="515.0" width="5" height="82.0" rx="2.5" fill="#a15c00"/>
+<text x="96.0" y="540.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Doubt Note</text>
+<text x="96.0" y="563.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">open conflict or</text>
+<text x="96.0" y="580.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">falsifier</text>
+<line x1="270.0" y1="186.0" x2="330.0" y2="186.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="520.0" y1="186.0" x2="580.0" y2="186.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="770.0" y1="186.0" x2="830.0" y2="186.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="1020.0" y1="186.0" x2="1080.0" y2="186.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="1175.0" y1="227.0" x2="1175.0" y2="330.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="1080.0" y1="371.0" x2="1020.0" y2="371.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="830.0" y1="371.0" x2="770.0" y2="371.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 675 412 C 675 470 425 470 425 515" fill="none" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="520.0" y1="556.0" x2="580.0" y2="556.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="770.0" y1="556.0" x2="830.0" y2="556.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 925 515 C 930 455 680 440 675 412" fill="none" stroke="#748094" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M 1080 205 C 900 280 230 420 175 515" fill="none" stroke="#a15c00" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M 830 596 C 560 700 120 660 175 227" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="260.0" y="680.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="500" text-anchor="start">Key rule: a report is not evidence. Evidence only exists after review against a specific claim.</text>
+</svg>

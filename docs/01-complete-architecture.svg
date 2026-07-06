@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1040" viewBox="0 0 1600 1040" role="img" aria-label="Telos Complete Architecture">
+<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#101828" flood-opacity=".14"/></filter>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 10 5 L 0 10 z" fill="#748094"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#f6f7f9"/>
+<text x="40.0" y="46.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="760" text-anchor="start">Telos Complete Architecture</text>
+<text x="40.0" y="74.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="start">Daily scheduler -&gt; input layer -&gt; processing layer, observed through the dashboard</text>
+<rect x="610.0" y="105.0" width="300.0" height="78.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="610.0" y="105.0" width="5" height="78.0" rx="2.5" fill="#2563eb"/>
+<text x="626.0" y="130.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Daily Scheduler</text>
+<text x="626.0" y="153.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">starts the data collection loop</text>
+<rect x="60.0" y="230.0" width="500.0" height="235.0" rx="12" fill="#ffffff" stroke="#d5dce6" stroke-dasharray="6 5"/>
+<text x="76.0" y="256.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="740" text-anchor="start">Input Layer</text>
+<rect x="95.0" y="285.0" width="130.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="95.0" y="285.0" width="5" height="82.0" rx="2.5" fill="#0f8a5f"/>
+<text x="111.0" y="310.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Feeds</text>
+<text x="111.0" y="333.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">RSS, official</text>
+<text x="111.0" y="350.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">sources,</text>
+<text x="111.0" y="367.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">publishers</text>
+<rect x="245.0" y="285.0" width="130.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="245.0" y="285.0" width="5" height="82.0" rx="2.5" fill="#a15c00"/>
+<text x="261.0" y="310.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">APIs</text>
+<text x="261.0" y="333.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">reader fallback,</text>
+<text x="261.0" y="350.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">market data</text>
+<rect x="395.0" y="285.0" width="130.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="395.0" y="285.0" width="5" height="82.0" rx="2.5" fill="#6d4aff"/>
+<text x="411.0" y="310.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">User Context</text>
+<text x="411.0" y="333.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">notes, theories,</text>
+<text x="411.0" y="350.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">memories</text>
+<rect x="610.0" y="230.0" width="520.0" height="565.0" rx="12" fill="#ffffff" stroke="#d5dce6" stroke-dasharray="6 5"/>
+<text x="626.0" y="256.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="740" text-anchor="start">Processing Layer</text>
+<rect x="650.0" y="285.0" width="170.0" height="70.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="650.0" y="285.0" width="5" height="70.0" rx="2.5" fill="#2563eb"/>
+<text x="666.0" y="310.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Scan</text>
+<text x="666.0" y="333.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">collect and dedupe raw</text>
+<text x="666.0" y="350.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">signals</text>
+<rect x="900.0" y="285.0" width="170.0" height="70.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="900.0" y="285.0" width="5" height="70.0" rx="2.5" fill="#2563eb"/>
+<text x="916.0" y="310.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Prefilter</text>
+<text x="916.0" y="333.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">fast source and topic</text>
+<text x="916.0" y="350.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">scoring</text>
+<rect x="650.0" y="405.0" width="170.0" height="70.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="650.0" y="405.0" width="5" height="70.0" rx="2.5" fill="#a15c00"/>
+<text x="666.0" y="430.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Full Fetch</text>
+<text x="666.0" y="453.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">article text and</text>
+<text x="666.0" y="470.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">reader fallback</text>
+<rect x="900.0" y="405.0" width="170.0" height="70.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="900.0" y="405.0" width="5" height="70.0" rx="2.5" fill="#a15c00"/>
+<text x="916.0" y="430.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Qwen Triage</text>
+<text x="916.0" y="453.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">full-text relevance</text>
+<rect x="650.0" y="525.0" width="170.0" height="70.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="650.0" y="525.0" width="5" height="70.0" rx="2.5" fill="#0f8a5f"/>
+<text x="666.0" y="550.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Dossiers</text>
+<text x="666.0" y="573.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">grounded article</text>
+<text x="666.0" y="590.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">analysis</text>
+<rect x="900.0" y="525.0" width="170.0" height="70.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="900.0" y="525.0" width="5" height="70.0" rx="2.5" fill="#0f8a5f"/>
+<text x="916.0" y="550.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Domain Syntheses</text>
+<text x="916.0" y="573.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">AI, geopolitics,</text>
+<text x="916.0" y="590.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">finance</text>
+<rect x="650.0" y="645.0" width="170.0" height="70.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="650.0" y="645.0" width="5" height="70.0" rx="2.5" fill="#6d4aff"/>
+<text x="666.0" y="670.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Worldview</text>
+<text x="666.0" y="693.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">cross-domain causal</text>
+<text x="666.0" y="710.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">model</text>
+<rect x="900.0" y="645.0" width="170.0" height="70.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="900.0" y="645.0" width="5" height="70.0" rx="2.5" fill="#c2413b"/>
+<text x="916.0" y="670.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Dreaming</text>
+<text x="916.0" y="693.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">forecasts and cautious</text>
+<text x="916.0" y="710.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">updates</text>
+<rect x="1180.0" y="230.0" width="360.0" height="305.0" rx="12" fill="#ffffff" stroke="#d5dce6" stroke-dasharray="6 5"/>
+<text x="1196.0" y="256.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="740" text-anchor="start">Memory And Files</text>
+<rect x="1215.0" y="285.0" width="135.0" height="70.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="1215.0" y="285.0" width="5" height="70.0" rx="2.5" fill="#2563eb"/>
+<text x="1231.0" y="310.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">telos.db</text>
+<text x="1231.0" y="333.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">claims, beliefs,</text>
+<text x="1231.0" y="350.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">evidence</text>
+<rect x="1370.0" y="285.0" width="135.0" height="70.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="1370.0" y="285.0" width="5" height="70.0" rx="2.5" fill="#0f8a5f"/>
+<text x="1386.0" y="310.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Reports</text>
+<text x="1386.0" y="333.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">dossiers, packs,</text>
+<text x="1386.0" y="350.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">queues</text>
+<rect x="1215.0" y="400.0" width="135.0" height="70.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="1215.0" y="400.0" width="5" height="70.0" rx="2.5" fill="#6d4aff"/>
+<text x="1231.0" y="425.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Forecasts</text>
+<text x="1231.0" y="448.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">ledger and</text>
+<text x="1231.0" y="465.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">calibration</text>
+<rect x="1370.0" y="400.0" width="135.0" height="70.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="1370.0" y="400.0" width="5" height="70.0" rx="2.5" fill="#a15c00"/>
+<text x="1386.0" y="425.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Audit</text>
+<text x="1386.0" y="448.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">reviews and run</text>
+<text x="1386.0" y="465.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">logs</text>
+<rect x="1180.0" y="575.0" width="360.0" height="220.0" rx="12" fill="#ffffff" stroke="#d5dce6" stroke-dasharray="6 5"/>
+<text x="1196.0" y="601.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="740" text-anchor="start">Guardrails</text>
+<rect x="1215.0" y="630.0" width="135.0" height="64.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="1215.0" y="630.0" width="5" height="64.0" rx="2.5" fill="#c2413b"/>
+<text x="1231.0" y="655.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Quality Gates</text>
+<text x="1231.0" y="678.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">stop weak runs</text>
+<rect x="1370.0" y="630.0" width="135.0" height="64.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="1370.0" y="630.0" width="5" height="64.0" rx="2.5" fill="#6d4aff"/>
+<text x="1386.0" y="655.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Doubt Engine</text>
+<text x="1386.0" y="678.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">conflicts and</text>
+<text x="1386.0" y="695.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">falsifiers</text>
+<rect x="1292.0" y="715.0" width="135.0" height="64.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="1292.0" y="715.0" width="5" height="64.0" rx="2.5" fill="#a15c00"/>
+<text x="1308.0" y="740.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Review</text>
+<text x="1308.0" y="763.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">evidence</text>
+<text x="1308.0" y="780.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">promotion</text>
+<rect x="700.0" y="875.0" width="280.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="700.0" y="875.0" width="5" height="82.0" rx="2.5" fill="#2563eb"/>
+<text x="716.0" y="900.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">Telos Dashboard</text>
+<text x="716.0" y="923.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">observes the whole process layer:</text>
+<text x="716.0" y="940.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">reports, status, belief graph,</text>
+<text x="716.0" y="957.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">reviews</text>
+<rect x="1060.0" y="875.0" width="250.0" height="82.0" rx="8" fill="#ffffff" stroke="#d5dce6" filter="url(#shadow)"/>
+<rect x="1060.0" y="875.0" width="5" height="82.0" rx="2.5" fill="#0f8a5f"/>
+<text x="1076.0" y="900.0" fill="#15181d" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="720" text-anchor="start">User / Codex / Phone</text>
+<text x="1076.0" y="923.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">accesses dashboard, reads,</text>
+<text x="1076.0" y="940.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="start">asks, reviews, adds theories</text>
+<path d="M 760 183 C 760 215 310 215 310 285" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 760 183 C 760 215 735 240 735 285" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="525.0" y1="326.0" x2="650.0" y2="326.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="820.0" y1="320.0" x2="900.0" y2="320.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 985 355 C 985 385 735 380 735 405" fill="none" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="820.0" y1="440.0" x2="900.0" y2="440.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 985 475 C 985 505 735 500 735 525" fill="none" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="820.0" y1="560.0" x2="900.0" y2="560.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 985 595 C 985 625 735 620 735 645" fill="none" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<line x1="820.0" y1="680.0" x2="900.0" y2="680.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1070 560 C 1125 560 1140 320 1215 320" fill="none" stroke="#657080" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1070 560 C 1160 560 1275 320 1370 320" fill="none" stroke="#657080" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 985 715 C 1090 750 1130 435 1215 435" fill="none" stroke="#657080" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 985 715 C 1130 785 1260 745 1292 745" fill="none" stroke="#657080" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 870 795 C 870 835 840 835 840 875" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="870.0" y="835.0" fill="#2563eb" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="500" text-anchor="middle">dashboard observation over entire process</text>
+<path d="M 1505 662 C 1535 820 1010 835 945 875" fill="none" stroke="#6d4aff" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<path d="M 1350 745 C 1260 845 1030 835 945 875" fill="none" stroke="#a15c00" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<line x1="1060.0" y1="916.0" x2="980.0" y2="916.0" stroke="#748094" stroke-width="2.2" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1185 957 C 1040 1015 470 1010 460 367" fill="none" stroke="#0f8a5f" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+<text x="1010.0" y="1000.0" fill="#657080" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="500" text-anchor="middle">The process layer feeds the dashboard. The user accesses the dashboard and review feedback shapes the next run.</text>
+</svg>

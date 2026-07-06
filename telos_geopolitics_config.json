@@ -1,0 +1,417 @@
+﻿{
+    "version":  1,
+    "id":  "geopolitics",
+    "title":  "Geopolitics",
+    "output_dir":  "geopolitics",
+    "lookback_hours":  48,
+    "storage_min_score":  3,
+    "max_items_per_source":  120,
+    "max_digest_items":  80,
+    "max_candidates":  60,
+    "max_dossiers":  15,
+    "min_dossier_relevance":  55,
+    "min_grounded_dossiers":  2,
+    "max_article_chars":  30000,
+    "max_llm_input_chars":  9000,
+    "fetch_timeout_seconds":  35,
+    "fetch_retries":  1,
+    "fetch_retry_delay_seconds":  6,
+    "fetch_min_domain_interval_seconds":  3,
+    "fetch_rate_limit_cooldown_seconds":  180,
+    "google_news_rate_limit_cooldown_seconds":  0,
+    "reader_api_fallback_enabled":  true,
+    "reader_api_timeout_seconds":  45,
+    "triage_fetch_delay_seconds":  1.0,
+    "research_focus":  "Material changes in war and peace, alliances, sanctions, export controls, trade, industrial policy, elections with international consequences, technology sovereignty, cyber and space security, energy routes, critical minerals, shipping chokepoints, defense production, and the interaction between AI infrastructure and state power. Prioritize actions, enacted policy, measurable capacity and primary documents over rhetoric.",
+    "negative_keywords":  [
+                              "sports",
+                              "celebrity",
+                              "travel guide",
+                              "opinion podcast",
+                              "sponsored",
+                              "vacancy",
+                              "job posting",
+                              "nopo act"
+                          ],
+    "blocked_publishers":  [
+                               "Travel And Tour World",
+                               "El Cronista",
+                               "MSN",
+                               "thetraveler.org",
+                               "Defence Security Asia",
+                               "Informat.ro",
+                               "HOKANEWS.COM",
+                               "National Security Journal",
+                               "EU Today",
+                               "Policy Circle",
+                               "Caspian Post",
+                               "Stockhead"
+                           ],
+    "trusted_publishers":  [
+                               "Reuters",
+                               "Associated Press",
+                               "AP News",
+                               "Bloomberg",
+                               "Financial Times",
+                               "BBC",
+                               "Nikkei Asia",
+                               "Politico",
+                               "The Guardian",
+                               "Al Jazeera",
+                               "CSIS",
+                               "Council on Foreign Relations",
+                               "Defense News",
+                               "Defense One",
+                               "The Economist",
+                               "United Nations",
+                               "U.S. Department of Defense",
+                               "European Commission",
+                               "Bureau of Industry and Security",
+                               "International Energy Agency"
+                           ],
+    "headline_boost_keywords":  [
+                                    "sanctions",
+                                    "ceasefire",
+                                    "invasion",
+                                    "export controls",
+                                    "tariff",
+                                    "treaty",
+                                    "mobilization",
+                                    "election",
+                                    "missile",
+                                    "nuclear",
+                                    "blockade"
+                                ],
+    "llm_prefilter":  {
+                          "enabled":  true,
+                          "model":  "qwen3:4b-instruct",
+                          "max_items":  140,
+                          "batch_size":  20,
+                          "min_model_score":  45,
+                          "timeout_seconds":  900,
+                          "num_ctx":  8192,
+                          "num_predict":  2000
+                      },
+    "llm_report":  {
+                       "model":  "qwen3.5:9b",
+                       "triage_model":  "qwen3:4b-instruct",
+                       "triage_timeout_seconds":  300,
+                       "triage_num_ctx":  8192,
+                       "thinking":  true,
+                       "timeout_seconds":  900,
+                       "temperature":  0.15,
+                       "num_ctx":  12288,
+                       "num_predict":  1400,
+                       "finalizer_num_predict":  1100,
+                       "finalizer_timeout_seconds":  900
+                   },
+    "synthesis":  {
+                      "model":  "qwen3.5:9b",
+                      "thinking":  false,
+                      "max_input_chars":  32000,
+                      "timeout_seconds":  420,
+                      "temperature":  0.2,
+                      "num_ctx":  32768,
+                      "num_predict":  2400
+                  },
+    "topics":  [
+                   {
+                       "id":  "conflict_security",
+                       "label":  "Conflict / Security",
+                       "weight":  5,
+                       "keywords":  [
+                                        "war",
+                                        "conflict",
+                                        "military",
+                                        "missile",
+                                        "drone",
+                                        "ceasefire",
+                                        "invasion",
+                                        "defense",
+                                        "nuclear",
+                                        "mobilization",
+                                        "attack",
+                                        "security guarantee"
+                                    ]
+                   },
+                   {
+                       "id":  "alliances_diplomacy",
+                       "label":  "Alliances / Diplomacy",
+                       "weight":  4,
+                       "keywords":  [
+                                        "nato",
+                                        "alliance",
+                                        "treaty",
+                                        "summit",
+                                        "diplomacy",
+                                        "bilateral",
+                                        "multilateral",
+                                        "united nations",
+                                        "security council",
+                                        "peace talks"
+                                    ]
+                   },
+                   {
+                       "id":  "trade_sanctions",
+                       "label":  "Trade / Sanctions",
+                       "weight":  5,
+                       "keywords":  [
+                                        "sanctions",
+                                        "tariff",
+                                        "export control",
+                                        "trade restriction",
+                                        "embargo",
+                                        "entity list",
+                                        "customs",
+                                        "trade war",
+                                        "foreign investment review"
+                                    ]
+                   },
+                   {
+                       "id":  "technology_power",
+                       "label":  "Technology / State Power",
+                       "weight":  5,
+                       "keywords":  [
+                                        "semiconductor",
+                                        "artificial intelligence",
+                                        "ai infrastructure",
+                                        "compute",
+                                        "chips",
+                                        "cyber",
+                                        "technology sovereignty",
+                                        "digital sovereignty",
+                                        "quantum",
+                                        "satellite"
+                                    ]
+                   },
+                   {
+                       "id":  "energy_resources",
+                       "label":  "Energy / Resources",
+                       "weight":  4,
+                       "keywords":  [
+                                        "oil",
+                                        "gas",
+                                        "lng",
+                                        "nuclear energy",
+                                        "critical minerals",
+                                        "rare earth",
+                                        "uranium",
+                                        "pipeline",
+                                        "electricity",
+                                        "energy security",
+                                        "opec"
+                                    ]
+                   },
+                   {
+                       "id":  "political_economy",
+                       "label":  "Political Economy",
+                       "weight":  4,
+                       "keywords":  [
+                                        "industrial policy",
+                                        "subsidy",
+                                        "election",
+                                        "government",
+                                        "regulation",
+                                        "debt",
+                                        "currency",
+                                        "central bank",
+                                        "supply chain",
+                                        "manufacturing"
+                                    ]
+                   },
+                   {
+                       "id":  "shipping_logistics",
+                       "label":  "Shipping / Chokepoints",
+                       "weight":  4,
+                       "keywords":  [
+                                        "shipping",
+                                        "red sea",
+                                        "suez",
+                                        "panama canal",
+                                        "taiwan strait",
+                                        "south china sea",
+                                        "port",
+                                        "blockade",
+                                        "freight",
+                                        "chokepoint"
+                                    ]
+                   }
+               ],
+    "sources":  [
+                    {
+                        "id":  "un_news",
+                        "name":  "UN News",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.un.org/feed/subscribe/en/news/all/rss.xml"
+                    },
+                    {
+                        "id":  "google_white_house",
+                        "name":  "Official Search - White House",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://news.google.com/rss/search?q=site%3Awhitehouse.gov%2Fbriefing-room+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_us_state",
+                        "name":  "Official Search - US State Department",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://news.google.com/rss/search?q=site%3Astate.gov+press+statement+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_us_treasury",
+                        "name":  "Official Search - US Treasury",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://news.google.com/rss/search?q=site%3Ahome.treasury.gov%2Fnews+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_eu_council",
+                        "name":  "Official Search - European Council",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://news.google.com/rss/search?q=site%3Aconsilium.europa.eu%2Fen%2Fpress+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_eu_commission",
+                        "name":  "Official Search - European Commission",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://news.google.com/rss/search?q=site%3Aec.europa.eu%2Fcommission%2Fpresscorner+sanctions+OR+trade+OR+defence+OR+energy+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_nato",
+                        "name":  "Official Search - NATO",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://news.google.com/rss/search?q=site%3Anato.int+news+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_us_defense",
+                        "name":  "Official Search - US Defense Department",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://news.google.com/rss/search?q=site%3Adefense.gov%2FNews+security+OR+military+OR+alliance+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_bis_export_controls",
+                        "name":  "Official Search - US BIS Export Controls",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://news.google.com/rss/search?q=site%3Abis.doc.gov+export+controls+OR+entity+list+OR+semiconductor+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_ustr_trade",
+                        "name":  "Official Search - USTR Trade Policy",
+                        "type":  "rss",
+                        "priority":  5,
+                        "url":  "https://news.google.com/rss/search?q=site%3Austr.gov+tariff+OR+trade+OR+supply+chain+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_iea_security",
+                        "name":  "Official Search - IEA Energy Security",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Aiea.org+energy+security+OR+gas+OR+oil+OR+electricity+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_cfr",
+                        "name":  "Policy Search - CFR",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Acfr.org+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_csis",
+                        "name":  "Policy Search - CSIS",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Acsis.org+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_iiss",
+                        "name":  "Policy Search - IISS",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Aiiss.org+security+OR+defence+OR+geopolitics+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_chatham_house",
+                        "name":  "Policy Search - Chatham House",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Achathamhouse.org+geopolitics+OR+security+OR+trade+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "defense_one",
+                        "name":  "Defense One",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://www.defenseone.com/rss/all/"
+                    },
+                    {
+                        "id":  "google_reuters_world",
+                        "name":  "Google News - Reuters World",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Areuters.com%2Fworld+war+OR+sanctions+OR+trade+OR+defense+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_ap_world",
+                        "name":  "Google News - AP World",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Aapnews.com+war+OR+sanctions+OR+election+OR+China+OR+Russia+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_politico_global",
+                        "name":  "Google News - Politico Global Policy",
+                        "type":  "rss",
+                        "priority":  4,
+                        "url":  "https://news.google.com/rss/search?q=site%3Apolitico.com+sanctions+OR+NATO+OR+China+OR+trade+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_defense_news",
+                        "name":  "Google News - Defense News",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://news.google.com/rss/search?q=site%3Adefensenews.com+drone+OR+missile+OR+procurement+OR+alliance+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_geo_security",
+                        "name":  "Google News - Geopolitical Security",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://news.google.com/rss/search?q=geopolitics+OR+sanctions+OR+export+controls+OR+military+alliance+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_geo_asia",
+                        "name":  "Google News - China Taiwan Indo-Pacific",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://news.google.com/rss/search?q=China+Taiwan+Indo-Pacific+semiconductors+security+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_geo_europe",
+                        "name":  "Google News - Europe Russia Ukraine",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://news.google.com/rss/search?q=Europe+Russia+Ukraine+NATO+energy+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_geo_middle_east",
+                        "name":  "Google News - Middle East",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://news.google.com/rss/search?q=Middle+East+Iran+Israel+Gulf+shipping+oil+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    },
+                    {
+                        "id":  "google_geo_resources",
+                        "name":  "Google News - Critical Resources",
+                        "type":  "rss",
+                        "priority":  3,
+                        "url":  "https://news.google.com/rss/search?q=critical+minerals+rare+earth+uranium+energy+security+when%3A2d\u0026hl=en-US\u0026gl=US\u0026ceid=US%3Aen"
+                    }
+                ]
+}

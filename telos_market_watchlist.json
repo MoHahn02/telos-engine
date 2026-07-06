@@ -1,0 +1,890 @@
+﻿{
+    "version":  1,
+    "name":  "Telos 100",
+    "description":  "A thesis-linked research watchlist. Ranking is not a recommendation or portfolio allocation.",
+    "price_provider":  "Yahoo Finance chart endpoint",
+    "benchmarks":  [
+                       {
+                           "symbol":  "^GSPC",
+                           "name":  "S\u0026P 500"
+                       },
+                       {
+                           "symbol":  "^IXIC",
+                           "name":  "Nasdaq Composite"
+                       }
+                   ],
+    "themes":  {
+                   "frontier_ai":  {
+                                       "label":  "Frontier AI",
+                                       "claim_ids":  [
+
+                                                     ]
+                                   },
+                   "agent_workflows":  {
+                                           "label":  "Agents / Workflows",
+                                           "claim_ids":  [
+
+                                                         ]
+                                       },
+                   "useful_data":  {
+                                       "label":  "Useful Data",
+                                       "claim_ids":  [
+
+                                                     ]
+                                   },
+                   "compute":  {
+                                   "label":  "Compute / Semiconductors",
+                                   "claim_ids":  [
+
+                                                 ]
+                               },
+                   "energy_grid":  {
+                                       "label":  "Energy / Grid",
+                                       "claim_ids":  [
+
+                                                     ]
+                                   },
+                   "robotics":  {
+                                    "label":  "Robotics / Physical AI",
+                                    "claim_ids":  [
+
+                                                  ]
+                                },
+                   "automation":  {
+                                      "label":  "Industrial Automation",
+                                      "claim_ids":  [
+
+                                                    ]
+                                  },
+                   "security":  {
+                                    "label":  "Agent / Cyber Security",
+                                    "claim_ids":  [
+
+                                                  ]
+                                },
+                   "ai_science":  {
+                                      "label":  "AI for Science",
+                                      "claim_ids":  [
+
+                                                    ]
+                                  },
+                   "crypto_payments":  {
+                                           "label":  "Crypto / Payments / HPC",
+                                           "claim_ids":  [
+
+                                                         ]
+                                       }
+               },
+    "stocks":  [
+                   {
+                       "symbol":  "MSFT",
+                       "name":  "Microsoft",
+                       "themes":  {
+                                      "frontier_ai":  1.0,
+                                      "agent_workflows":  1.0,
+                                      "compute":  0.7
+                                  }
+                   },
+                   {
+                       "symbol":  "GOOGL",
+                       "name":  "Alphabet",
+                       "themes":  {
+                                      "frontier_ai":  1.0,
+                                      "useful_data":  1.0,
+                                      "agent_workflows":  0.8
+                                  }
+                   },
+                   {
+                       "symbol":  "AMZN",
+                       "name":  "Amazon",
+                       "themes":  {
+                                      "compute":  0.9,
+                                      "agent_workflows":  0.7,
+                                      "automation":  0.6
+                                  }
+                   },
+                   {
+                       "symbol":  "META",
+                       "name":  "Meta Platforms",
+                       "themes":  {
+                                      "frontier_ai":  0.9,
+                                      "useful_data":  1.0,
+                                      "compute":  0.6
+                                  }
+                   },
+                   {
+                       "symbol":  "ORCL",
+                       "name":  "Oracle",
+                       "themes":  {
+                                      "compute":  0.9,
+                                      "agent_workflows":  0.6
+                                  }
+                   },
+                   {
+                       "symbol":  "IBM",
+                       "name":  "IBM",
+                       "themes":  {
+                                      "agent_workflows":  0.7,
+                                      "compute":  0.5,
+                                      "ai_science":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "CRM",
+                       "name":  "Salesforce",
+                       "themes":  {
+                                      "agent_workflows":  1.0,
+                                      "useful_data":  0.6
+                                  }
+                   },
+                   {
+                       "symbol":  "NOW",
+                       "name":  "ServiceNow",
+                       "themes":  {
+                                      "agent_workflows":  1.0,
+                                      "automation":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "PLTR",
+                       "name":  "Palantir",
+                       "themes":  {
+                                      "agent_workflows":  0.9,
+                                      "useful_data":  0.8,
+                                      "security":  0.6
+                                  }
+                   },
+                   {
+                       "symbol":  "ADBE",
+                       "name":  "Adobe",
+                       "themes":  {
+                                      "frontier_ai":  0.6,
+                                      "agent_workflows":  0.7,
+                                      "useful_data":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "SAP",
+                       "name":  "SAP",
+                       "themes":  {
+                                      "agent_workflows":  0.8,
+                                      "automation":  0.6,
+                                      "useful_data":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "TEAM",
+                       "name":  "Atlassian",
+                       "themes":  {
+                                      "agent_workflows":  0.9,
+                                      "useful_data":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "NVDA",
+                       "name":  "NVIDIA",
+                       "themes":  {
+                                      "compute":  1.0,
+                                      "robotics":  0.9,
+                                      "frontier_ai":  0.8
+                                  }
+                   },
+                   {
+                       "symbol":  "AMD",
+                       "name":  "Advanced Micro Devices",
+                       "themes":  {
+                                      "compute":  1.0,
+                                      "frontier_ai":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "AVGO",
+                       "name":  "Broadcom",
+                       "themes":  {
+                                      "compute":  1.0,
+                                      "agent_workflows":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "INTC",
+                       "name":  "Intel",
+                       "themes":  {
+                                      "compute":  0.9,
+                                      "energy_grid":  0.3
+                                  }
+                   },
+                   {
+                       "symbol":  "QCOM",
+                       "name":  "Qualcomm",
+                       "themes":  {
+                                      "compute":  0.8,
+                                      "robotics":  0.6,
+                                      "agent_workflows":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "ARM",
+                       "name":  "Arm Holdings",
+                       "themes":  {
+                                      "compute":  0.9,
+                                      "robotics":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "TSM",
+                       "name":  "Taiwan Semiconductor",
+                       "themes":  {
+                                      "compute":  1.0,
+                                      "frontier_ai":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "ASML",
+                       "name":  "ASML",
+                       "themes":  {
+                                      "compute":  1.0
+                                  }
+                   },
+                   {
+                       "symbol":  "AMAT",
+                       "name":  "Applied Materials",
+                       "themes":  {
+                                      "compute":  0.9
+                                  }
+                   },
+                   {
+                       "symbol":  "LRCX",
+                       "name":  "Lam Research",
+                       "themes":  {
+                                      "compute":  0.9
+                                  }
+                   },
+                   {
+                       "symbol":  "KLAC",
+                       "name":  "KLA",
+                       "themes":  {
+                                      "compute":  0.9
+                                  }
+                   },
+                   {
+                       "symbol":  "MU",
+                       "name":  "Micron Technology",
+                       "themes":  {
+                                      "compute":  0.9
+                                  }
+                   },
+                   {
+                       "symbol":  "MRVL",
+                       "name":  "Marvell Technology",
+                       "themes":  {
+                                      "compute":  0.9
+                                  }
+                   },
+                   {
+                       "symbol":  "ANET",
+                       "name":  "Arista Networks",
+                       "themes":  {
+                                      "compute":  0.9,
+                                      "agent_workflows":  0.3
+                                  }
+                   },
+                   {
+                       "symbol":  "SMCI",
+                       "name":  "Super Micro Computer",
+                       "themes":  {
+                                      "compute":  0.9,
+                                      "energy_grid":  0.3
+                                  }
+                   },
+                   {
+                       "symbol":  "DELL",
+                       "name":  "Dell Technologies",
+                       "themes":  {
+                                      "compute":  0.8,
+                                      "agent_workflows":  0.3
+                                  }
+                   },
+                   {
+                       "symbol":  "HPE",
+                       "name":  "Hewlett Packard Enterprise",
+                       "themes":  {
+                                      "compute":  0.8,
+                                      "agent_workflows":  0.3
+                                  }
+                   },
+                   {
+                       "symbol":  "VRT",
+                       "name":  "Vertiv",
+                       "themes":  {
+                                      "compute":  0.8,
+                                      "energy_grid":  1.0
+                                  }
+                   },
+                   {
+                       "symbol":  "CRDO",
+                       "name":  "Credo Technology",
+                       "themes":  {
+                                      "compute":  0.9
+                                  }
+                   },
+                   {
+                       "symbol":  "ALAB",
+                       "name":  "Astera Labs",
+                       "themes":  {
+                                      "compute":  0.9
+                                  }
+                   },
+                   {
+                       "symbol":  "TXN",
+                       "name":  "Texas Instruments",
+                       "themes":  {
+                                      "compute":  0.6,
+                                      "automation":  0.6
+                                  }
+                   },
+                   {
+                       "symbol":  "ADI",
+                       "name":  "Analog Devices",
+                       "themes":  {
+                                      "compute":  0.6,
+                                      "automation":  0.7
+                                  }
+                   },
+                   {
+                       "symbol":  "NXPI",
+                       "name":  "NXP Semiconductors",
+                       "themes":  {
+                                      "compute":  0.6,
+                                      "robotics":  0.6
+                                  }
+                   },
+                   {
+                       "symbol":  "MCHP",
+                       "name":  "Microchip Technology",
+                       "themes":  {
+                                      "compute":  0.6,
+                                      "automation":  0.6
+                                  }
+                   },
+                   {
+                       "symbol":  "ON",
+                       "name":  "ON Semiconductor",
+                       "themes":  {
+                                      "compute":  0.6,
+                                      "energy_grid":  0.5,
+                                      "automation":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "CEG",
+                       "name":  "Constellation Energy",
+                       "themes":  {
+                                      "energy_grid":  1.0,
+                                      "compute":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "VST",
+                       "name":  "Vistra",
+                       "themes":  {
+                                      "energy_grid":  1.0,
+                                      "compute":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "NRG",
+                       "name":  "NRG Energy",
+                       "themes":  {
+                                      "energy_grid":  0.9,
+                                      "compute":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "GEV",
+                       "name":  "GE Vernova",
+                       "themes":  {
+                                      "energy_grid":  1.0,
+                                      "automation":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "ETN",
+                       "name":  "Eaton",
+                       "themes":  {
+                                      "energy_grid":  1.0,
+                                      "automation":  0.7
+                                  }
+                   },
+                   {
+                       "symbol":  "PWR",
+                       "name":  "Quanta Services",
+                       "themes":  {
+                                      "energy_grid":  1.0,
+                                      "automation":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "HUBB",
+                       "name":  "Hubbell",
+                       "themes":  {
+                                      "energy_grid":  0.9,
+                                      "automation":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "NEE",
+                       "name":  "NextEra Energy",
+                       "themes":  {
+                                      "energy_grid":  0.8
+                                  }
+                   },
+                   {
+                       "symbol":  "DUK",
+                       "name":  "Duke Energy",
+                       "themes":  {
+                                      "energy_grid":  0.8
+                                  }
+                   },
+                   {
+                       "symbol":  "SO",
+                       "name":  "Southern Company",
+                       "themes":  {
+                                      "energy_grid":  0.8
+                                  }
+                   },
+                   {
+                       "symbol":  "AEP",
+                       "name":  "American Electric Power",
+                       "themes":  {
+                                      "energy_grid":  0.8
+                                  }
+                   },
+                   {
+                       "symbol":  "EXC",
+                       "name":  "Exelon",
+                       "themes":  {
+                                      "energy_grid":  0.8
+                                  }
+                   },
+                   {
+                       "symbol":  "BWXT",
+                       "name":  "BWX Technologies",
+                       "themes":  {
+                                      "energy_grid":  0.9,
+                                      "automation":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "LEU",
+                       "name":  "Centrus Energy",
+                       "themes":  {
+                                      "energy_grid":  1.0
+                                  }
+                   },
+                   {
+                       "symbol":  "CCJ",
+                       "name":  "Cameco",
+                       "themes":  {
+                                      "energy_grid":  1.0
+                                  }
+                   },
+                   {
+                       "symbol":  "OKLO",
+                       "name":  "Oklo",
+                       "themes":  {
+                                      "energy_grid":  1.0,
+                                      "compute":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "SMR",
+                       "name":  "NuScale Power",
+                       "themes":  {
+                                      "energy_grid":  0.9,
+                                      "compute":  0.3
+                                  }
+                   },
+                   {
+                       "symbol":  "BE",
+                       "name":  "Bloom Energy",
+                       "themes":  {
+                                      "energy_grid":  0.9,
+                                      "compute":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "ROK",
+                       "name":  "Rockwell Automation",
+                       "themes":  {
+                                      "automation":  1.0,
+                                      "robotics":  0.7
+                                  }
+                   },
+                   {
+                       "symbol":  "HON",
+                       "name":  "Honeywell",
+                       "themes":  {
+                                      "automation":  0.9,
+                                      "robotics":  0.5,
+                                      "security":  0.3
+                                  }
+                   },
+                   {
+                       "symbol":  "EMR",
+                       "name":  "Emerson Electric",
+                       "themes":  {
+                                      "automation":  0.9,
+                                      "robotics":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "ZBRA",
+                       "name":  "Zebra Technologies",
+                       "themes":  {
+                                      "automation":  0.9,
+                                      "robotics":  0.8,
+                                      "useful_data":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "TER",
+                       "name":  "Teradyne",
+                       "themes":  {
+                                      "robotics":  0.9,
+                                      "compute":  0.6,
+                                      "automation":  0.7
+                                  }
+                   },
+                   {
+                       "symbol":  "SYM",
+                       "name":  "Symbotic",
+                       "themes":  {
+                                      "robotics":  1.0,
+                                      "automation":  1.0,
+                                      "agent_workflows":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "CGNX",
+                       "name":  "Cognex",
+                       "themes":  {
+                                      "robotics":  0.8,
+                                      "automation":  0.9,
+                                      "useful_data":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "ISRG",
+                       "name":  "Intuitive Surgical",
+                       "themes":  {
+                                      "robotics":  1.0,
+                                      "ai_science":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "DE",
+                       "name":  "Deere",
+                       "themes":  {
+                                      "robotics":  0.8,
+                                      "automation":  0.9,
+                                      "useful_data":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "CAT",
+                       "name":  "Caterpillar",
+                       "themes":  {
+                                      "automation":  0.8,
+                                      "robotics":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "URI",
+                       "name":  "United Rentals",
+                       "themes":  {
+                                      "automation":  0.6,
+                                      "energy_grid":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "PH",
+                       "name":  "Parker-Hannifin",
+                       "themes":  {
+                                      "automation":  0.9,
+                                      "robotics":  0.6
+                                  }
+                   },
+                   {
+                       "symbol":  "ITW",
+                       "name":  "Illinois Tool Works",
+                       "themes":  {
+                                      "automation":  0.8
+                                  }
+                   },
+                   {
+                       "symbol":  "AME",
+                       "name":  "AMETEK",
+                       "themes":  {
+                                      "automation":  0.8,
+                                      "robotics":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "KEYS",
+                       "name":  "Keysight Technologies",
+                       "themes":  {
+                                      "compute":  0.7,
+                                      "automation":  0.7
+                                  }
+                   },
+                   {
+                       "symbol":  "TDY",
+                       "name":  "Teledyne Technologies",
+                       "themes":  {
+                                      "robotics":  0.6,
+                                      "automation":  0.7,
+                                      "security":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "AVAV",
+                       "name":  "AeroVironment",
+                       "themes":  {
+                                      "robotics":  0.9,
+                                      "security":  0.7
+                                  }
+                   },
+                   {
+                       "symbol":  "KTOS",
+                       "name":  "Kratos Defense",
+                       "themes":  {
+                                      "robotics":  0.8,
+                                      "security":  0.7
+                                  }
+                   },
+                   {
+                       "symbol":  "RKLB",
+                       "name":  "Rocket Lab",
+                       "themes":  {
+                                      "robotics":  0.5,
+                                      "compute":  0.3,
+                                      "security":  0.6
+                                  }
+                   },
+                   {
+                       "symbol":  "PATH",
+                       "name":  "UiPath",
+                       "themes":  {
+                                      "agent_workflows":  0.9,
+                                      "automation":  0.9
+                                  }
+                   },
+                   {
+                       "symbol":  "CRWD",
+                       "name":  "CrowdStrike",
+                       "themes":  {
+                                      "security":  1.0,
+                                      "agent_workflows":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "PANW",
+                       "name":  "Palo Alto Networks",
+                       "themes":  {
+                                      "security":  1.0,
+                                      "agent_workflows":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "FTNT",
+                       "name":  "Fortinet",
+                       "themes":  {
+                                      "security":  0.9,
+                                      "compute":  0.3
+                                  }
+                   },
+                   {
+                       "symbol":  "ZS",
+                       "name":  "Zscaler",
+                       "themes":  {
+                                      "security":  0.9,
+                                      "agent_workflows":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "NET",
+                       "name":  "Cloudflare",
+                       "themes":  {
+                                      "security":  0.8,
+                                      "compute":  0.6,
+                                      "agent_workflows":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "DDOG",
+                       "name":  "Datadog",
+                       "themes":  {
+                                      "agent_workflows":  0.8,
+                                      "useful_data":  0.6,
+                                      "security":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "SNOW",
+                       "name":  "Snowflake",
+                       "themes":  {
+                                      "useful_data":  0.9,
+                                      "agent_workflows":  0.8
+                                  }
+                   },
+                   {
+                       "symbol":  "MDB",
+                       "name":  "MongoDB",
+                       "themes":  {
+                                      "agent_workflows":  0.7,
+                                      "useful_data":  0.7
+                                  }
+                   },
+                   {
+                       "symbol":  "ESTC",
+                       "name":  "Elastic",
+                       "themes":  {
+                                      "useful_data":  0.8,
+                                      "agent_workflows":  0.7,
+                                      "security":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "GTLB",
+                       "name":  "GitLab",
+                       "themes":  {
+                                      "agent_workflows":  0.9,
+                                      "useful_data":  0.7
+                                  }
+                   },
+                   {
+                       "symbol":  "TMO",
+                       "name":  "Thermo Fisher Scientific",
+                       "themes":  {
+                                      "ai_science":  1.0,
+                                      "automation":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "DHR",
+                       "name":  "Danaher",
+                       "themes":  {
+                                      "ai_science":  1.0,
+                                      "automation":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "A",
+                       "name":  "Agilent Technologies",
+                       "themes":  {
+                                      "ai_science":  0.9,
+                                      "automation":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "ILMN",
+                       "name":  "Illumina",
+                       "themes":  {
+                                      "ai_science":  0.9,
+                                      "useful_data":  0.8
+                                  }
+                   },
+                   {
+                       "symbol":  "RXRX",
+                       "name":  "Recursion Pharmaceuticals",
+                       "themes":  {
+                                      "ai_science":  1.0,
+                                      "useful_data":  0.8
+                                  }
+                   },
+                   {
+                       "symbol":  "SDGR",
+                       "name":  "Schrodinger",
+                       "themes":  {
+                                      "ai_science":  1.0,
+                                      "compute":  0.4
+                                  }
+                   },
+                   {
+                       "symbol":  "TEM",
+                       "name":  "Tempus AI",
+                       "themes":  {
+                                      "ai_science":  0.9,
+                                      "useful_data":  1.0
+                                  }
+                   },
+                   {
+                       "symbol":  "DNA",
+                       "name":  "Ginkgo Bioworks",
+                       "themes":  {
+                                      "ai_science":  1.0,
+                                      "automation":  0.6,
+                                      "useful_data":  0.6
+                                  }
+                   },
+                   {
+                       "symbol":  "COIN",
+                       "name":  "Coinbase",
+                       "themes":  {
+                                      "crypto_payments":  1.0,
+                                      "agent_workflows":  0.3
+                                  }
+                   },
+                   {
+                       "symbol":  "HOOD",
+                       "name":  "Robinhood Markets",
+                       "themes":  {
+                                      "crypto_payments":  0.8,
+                                      "agent_workflows":  0.2
+                                  }
+                   },
+                   {
+                       "symbol":  "MSTR",
+                       "name":  "Strategy",
+                       "themes":  {
+                                      "crypto_payments":  0.9,
+                                      "compute":  0.2
+                                  }
+                   },
+                   {
+                       "symbol":  "MARA",
+                       "name":  "MARA Holdings",
+                       "themes":  {
+                                      "crypto_payments":  0.9,
+                                      "compute":  0.7,
+                                      "energy_grid":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "RIOT",
+                       "name":  "Riot Platforms",
+                       "themes":  {
+                                      "crypto_payments":  0.9,
+                                      "compute":  0.7,
+                                      "energy_grid":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "IREN",
+                       "name":  "IREN",
+                       "themes":  {
+                                      "crypto_payments":  0.7,
+                                      "compute":  0.9,
+                                      "energy_grid":  0.5
+                                  }
+                   },
+                   {
+                       "symbol":  "V",
+                       "name":  "Visa",
+                       "themes":  {
+                                      "crypto_payments":  0.8,
+                                      "agent_workflows":  0.3
+                                  }
+                   }
+               ]
+}
